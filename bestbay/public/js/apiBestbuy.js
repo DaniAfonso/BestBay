@@ -7,6 +7,7 @@ function searchBestbuy(b) {
 }
 
 function searchArtsBestbuy(b) {
+    classToggle("#PestBestbay .prelo", "none");
     $.ajax({
         //Cambiar a type: POST si necesario
         type: "GET",
@@ -18,10 +19,11 @@ function searchArtsBestbuy(b) {
         .done(function (data, textStatus, jqXHR) {
             if (console && console.log) {
                 console.log("ApiBestBuy Done");
-                createObjsB(data);
-                //console.log(artsBestbuy);
-                rellenarBestbuy();
             }
+            classToggle("#PestBestbay .prelo", "none");
+            createObjsB(data);
+            //console.log(artsBestbuy);
+            rellenarBestbuy();
         })
         .fail(function (jqXHR, textStatus, errorThrown) {
             if (console && console.log) {

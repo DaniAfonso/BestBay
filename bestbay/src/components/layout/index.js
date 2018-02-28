@@ -57,9 +57,6 @@ class NavR extends Component {
     }
 }
 
-
-// export default NavR;
-
 class SearchR extends Component {
     render() {
         return (
@@ -102,9 +99,6 @@ class SearchR extends Component {
     }
 }
 
-
-
-
 class MacbookR extends Component {
     render() {
         return (
@@ -130,25 +124,48 @@ class MacbookR extends Component {
     }
 }
 
-
-class PestaR extends Component {
+class SpinerR extends Component {
     render() {
         return (
-            <div>
-                <div id="PestEbay" className="col s12 m8 pest none">
-                    <div id="eResults" className="col s12"></div>
-                </div>
-                <div id="PestBestbuy" className="col s12 m8 pest none">
-                    <div id="bResults" className="col s12"></div>
-                </div>
-                <div id="PestExtra" className="col s12 m8 pest">
-                    <MacbookR />
+            <div className="col s12 prelo none">
+                <div className="preloader-wrapper big active">
+                    <div className="spinner-layer spinner-blue-only">
+                        <div className="circle-clipper left">
+                            <div className="circle"></div>
+                        </div>
+                        <div className="gap-patch">
+                            <div className="circle"></div>
+                        </div>
+                        <div className="circle-clipper right">
+                            <div className="circle"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         )
     }
 }
 
+class PestaR extends Component {
+    render() {
+        return (
+            <div>
+                <div id="PestEbay" className="col s12 m8 pest none">
+                    <SpinerR />
+                    <div id="eResults" className="col s12"></div>
+                </div>
+                <div id="PestBestbuy" className="col s12 m8 pest none">
+                    <SpinerR />
+                    <div id="bResults" className="col s12"></div>
+                </div>
+                <div id="PestExtra" className="col s12 m8 pest">
+                    <SpinerR />
+                    <MacbookR />
+                </div>
+            </div>
+        )
+    }
+}
 
 class FooterR extends Component {
     render() {
@@ -189,8 +206,6 @@ class FooterR extends Component {
         )
     }
 }
-
-
 
 export class RenderizarR extends Component {
     render() {

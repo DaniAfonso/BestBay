@@ -7,6 +7,7 @@ function searchEbay(b) {
 }
 
 function searchArtsEbay(b) {
+    classToggle("#PestEbay .prelo", "none");
     $.ajax({
         jsonp: "callback",
         dataType: "jsonp",
@@ -16,6 +17,7 @@ function searchArtsEbay(b) {
             createObjsE(response);
         },
         complete: function () {
+            classToggle("#PestEbay .prelo", "none");
             console.log("ApiEbay completado");
             //console.log(artsEbay);
             rellenarEbay();

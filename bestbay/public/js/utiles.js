@@ -18,3 +18,7 @@ function cardReturn(titulo, descripcion, img) {
     '</div>';
     return p;
 }
+
+function classToggle(a, b) {
+    $(a).toggleClass(b);
+}
