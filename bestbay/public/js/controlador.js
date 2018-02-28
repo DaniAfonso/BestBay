@@ -29,8 +29,13 @@ function inicializar() {
 
 function search() {
     let b = $('#fBusqueda').val();
-    searchEbay(b);
-    searchBestbuy(b);
+    console.log(b)
+    if (b.length >= 3) {
+        searchEbay(b);
+        searchBestbuy(b);
+    } else {
+        toast("Debes escribir almenos tres caracteres");
+    }
 }
 
 function changePest(e) {

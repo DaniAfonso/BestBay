@@ -22,3 +22,7 @@ function cardReturn(titulo, descripcion, img) {
 function classToggle(a, b) {
     $(a).toggleClass(b);
 }
+
+function toast(m) {
+    Materialize.toast(m, 3000, 'rounded')
+}
