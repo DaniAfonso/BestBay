@@ -17,6 +17,7 @@ function searchArtsEbay(b) {
             createObjsE(response);
         },
         complete: function () {
+            toast("Busqueda en Ebay completada");
             classToggle("#PestEbay .prelo", "none");
             console.log("ApiEbay completado");
             //console.log(artsEbay);

@@ -20,6 +20,7 @@ function searchArtsBestbuy(b) {
             if (console && console.log) {
                 console.log("ApiBestBuy Done");
             }
+            toast("Busqueda en BestBuy completada");
             classToggle("#PestBestbay .prelo", "none");
             createObjsB(data);
             //console.log(artsBestbuy);
@@ -43,6 +44,7 @@ function createUrlB(b) {
 
 function createObjsB(d) {
     //console.log(d.products);
+    artsBestbuy = [];
     $(d.products).each(function (i, e) {
         let p = $(this)[0];
         //$('#bResults').append(cardReturn(p.name, p.salePrice, p.thumbnailImage));

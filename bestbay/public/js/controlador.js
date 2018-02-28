@@ -29,12 +29,12 @@ function inicializar() {
 
 function search() {
     let b = $('#fBusqueda').val();
-    console.log(b)
-    if (b.length >= 3) {
+    if (b.length >= 2) {
+        $('#eResults, #bResults').empty();
         searchEbay(b);
         searchBestbuy(b);
     } else {
-        toast("Debes escribir almenos tres caracteres");
+        toast("Debes escribir almenos dos caracteres");
     }
 }
 
