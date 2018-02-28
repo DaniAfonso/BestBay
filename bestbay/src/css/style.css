@@ -1,4 +1,4 @@
-.nav-extended{
+.nav-extended {
     margin-bottom: 15px;
 }
 
@@ -12,6 +12,10 @@
     flex-flow: column;
     align-content: center;
     margin-top: 20px;
+}
+
+.brand-logo {
+    margin-left: 20px;
 }
 
 .cardImg {
