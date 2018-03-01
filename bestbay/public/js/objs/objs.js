@@ -21,23 +21,59 @@ function artBestbuy() {
     this.price = "";
 }
 
-function Categorias() {
+function optFiltrado() {
     /* Smartphones, TV y Health, Fitness and Beauty */
     this.ebay = ['15032', '293', '26395'];
     this.bestbuy = ['pcmcat209400050001', 'abcat0101000', 'pcmcat242800050021'];
-    this.catSelEbay = '15032';
-    this.catSelBestbuy = 'pcmcat209400050001';
+    this.catSelEbay = this.ebay[0];
+    this.catSelBestbuy = this.bestbuy[0];
+    this.maxPrice = 1000;
+    this.order = 'asc';
+    this.brands = "";
+    this.size = 10;
 }
 
-Categorias.prototype.getCatEbay = function () {
+optFiltrado.prototype.selCats = function (e) {
+    this.catSelEbay = this.ebay[e];
+    this.catSelBestbuy = this.bestbuy[e];
+}
+
+optFiltrado.prototype.getCatEbay = function () {
     return this.catSelEbay;
 }
 
-Categorias.prototype.getCatBestbuy = function () {
+optFiltrado.prototype.getCatBestbuy = function () {
     return this.catSelBestbuy;
 }
 
-Categorias.prototype.selCats = function (e) {
-    this.catSelEbay = this.ebay[e];
-    this.catSelBestbuy = this.bestbuy[e];
+optFiltrado.prototype.setMaxPrice = function (e) {
+    this.maxPrice = e;
+}
+
+optFiltrado.prototype.getMaxPrice = function () {
+    return this.maxPrice;
+}
+
+optFiltrado.prototype.setOrder = function (e) {
+    this.order = e;
+}
+
+optFiltrado.prototype.getOrder = function (e) {
+    return this.order;
+}
+
+optFiltrado.prototype.setBrands = function (e) {
+    this.brands = " " + e;
+}
+
+optFiltrado.prototype.getBrands = function () {
+    return this.brands;
+}
+
+optFiltrado.prototype.setSize = function (e) {
+    this.size = e;
+}
+
+optFiltrado.prototype.getSize = function () {
+    return this.size;
 }

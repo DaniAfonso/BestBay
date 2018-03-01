@@ -63,34 +63,51 @@ class SearchR extends Component {
             <div className="cardFiltro col s12 m4">
                 <fieldset>
 
-                    <div className="col s12">
-                        <a id="fBtnSearch" className="waves-effect waves-light btn">
-                            <i className="material-icons left">search</i>Buscar</a>
-                    </div>
-
-                    <div className="col s12">
-                        <ul id="dropCat" className="dropdown-content">
-                            <li><a className="dCat" id="cat0">Smartphones<span ></span></a></li>
-                            <li><a className="dCat" id="cat1">TV y Health<span ></span></a></li>
-                            <li><a className="dCat" id="cat2">Fitness and Beauty</a></li>
-                        </ul>
-                        <a id="dropCatA" className="btn dropdown-button" data-activates="dropCat">Categoría
-              <i className="material-icons right">arrow_drop_down</i>
-                        </a>
-                    </div>
-
                     <div className="input-field col s12">
                         <input id="fBusqueda" type="text" className="validate" />
                         <label htmlFor="fBusqueda">Filtro</label>
                     </div>
 
-                    <div className="switch col s12">
-                        <label>
-                            Nuevo
-              <input type="checkbox" />
-                            <span className="lever"></span>
-                            Usado
-            </label>
+                    <div className="col s12">
+                        <a id="fBtnSearch" className="waves-effect waves-light btn">
+                            <i className="material-icons right">search</i>Buscar</a>
+                    </div>
+
+                    <div className="col s12">
+                        <ul id="dropCat" className="dropdown-content">
+                            <li><a className="dCat" id="cat0">Smartphones</a></li>
+                            <li><a className="dCat" id="cat1">TV y Health</a></li>
+                            <li><a className="dCat" id="cat2">Fitness and Beauty</a></li>
+                        </ul>
+                        <a id="dropCatA" className="btn dropdown-button" data-activates="dropCat">Categoría
+                            <i className="material-icons right">arrow_drop_down</i>
+                        </a>
+                    </div>
+
+                    <div className="col s12">
+                        <ul id="dropBrand" className="dropdown-content">
+                            <li><a className="dBra" id="bra">Todas</a></li>
+                            <li><a className="dBra" id="braApple">Apple</a></li>
+                            <li><a className="dBra" id="braSamsung">Samsung</a></li>
+                            <li><a className="dBra" id="braNokia">Nokia</a></li>
+                            <li><a className="dBra" id="braLg">LG</a></li>
+                        </ul>
+                        <a id="dropBrandA" className="btn dropdown-button" data-activates="dropBrand">Marca
+                            <i className="material-icons right">arrow_drop_down</i>
+                        </a>
+                    </div>
+
+                    <div id="selOrder" className="input-field col s12">
+                        <select className="selSort">
+                            <option value="asc" defaultValue >Precio ascendente</option>
+                            <option value="desc">Precio descendente</option>
+                        </select>
+                        <label>Orden</label>
+                    </div>
+
+                    <div className="input-field col s12">
+                        <input min="1" placeholder="Ej: 75" id="maxPrice" type="number" className="validate" />
+                        <label htmlFor="maxPrice">Precio máximo</label>
                     </div>
 
                 </fieldset>
@@ -152,15 +169,26 @@ class PestaR extends Component {
             <div>
                 <div id="PestEbay" className="col s12 m8 pest none">
                     <SpinerR />
-                    <div id="eResults" className="col s12"></div>
+
                 </div>
                 <div id="PestBestbuy" className="col s12 m8 pest none">
                     <SpinerR />
-                    <div id="bResults" className="col s12"></div>
+
                 </div>
                 <div id="PestExtra" className="col s12 m8 pest">
                     <SpinerR />
-                    <MacbookR />
+                    <div className="col s6">
+                        <div className="parentPaginator col s12">
+                            <div id="pagination-1"></div>
+                        </div>
+                        <div id="eResults" className="col s12"></div>
+                    </div>
+                    <div className="col s6">
+                        <div className="parentPaginator col s12">
+                            <div id="pagination-2"></div>
+                        </div>
+                        <div id="bResults" className="col s12"></div>
+                    </div>
                 </div>
             </div>
         )
@@ -173,30 +201,31 @@ class FooterR extends Component {
             <div className=" ">
                 <footer id="footer" className="page-footer col s12">
                     <div className="col l6 s12">
-                        <h5 className="white-text">Footer Content</h5>
-                        <p className="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                        <h5 className="white-text">Información de interes</h5>
+                        <p className="grey-text text-lighten-4">Aquí puedes encontrar los enlaces a
+                            GitHub de cada miembo y el repositorio del proyecto.</p>
                     </div>
                     <div className="col l4 offset-l2 s12">
-                        <h5 className="white-text">Links</h5>
+                        <h5 className="white-text">Enlaces</h5>
                         <ul>
                             <li>
-                                <a className="grey-text text-lighten-3" href="#!">Link 1</a>
+                                <a className="grey-text text-lighten-3" href="#!">Daniel Afonso</a>
                             </li>
                             <li>
-                                <a className="grey-text text-lighten-3" href="#!">Link 2</a>
+                                <a className="grey-text text-lighten-3" href="#!">Luis</a>
                             </li>
                             <li>
-                                <a className="grey-text text-lighten-3" href="#!">Link 3</a>
+                                <a className="grey-text text-lighten-3" href="#!">Pascolo</a>
                             </li>
                             <li>
-                                <a className="grey-text text-lighten-3" href="#!">Link 4</a>
+                                <a className="grey-text text-lighten-3" href="#!">GitRepo</a>
                             </li>
                         </ul>
                     </div>
                     <div className="">
                         <div className="container">
                             © 2018 DaJeLu Copyright
-            <a className="grey-text text-lighten-4 right" href="https://creativecommons.org/licenses/by/4.0/">
+                            <a className="grey-text text-lighten-4 right" href="https://creativecommons.org/licenses/by/4.0/">
                                 <img height="25px" src="./recursos/logos/creative.svg" alt="Logo" />
                             </a>
                         </div>
@@ -210,7 +239,7 @@ class FooterR extends Component {
 export class RenderizarR extends Component {
     render() {
         return (
-            <div className="container">
+            <div className="cont">
                 <div id="rowPrincipal" className="row">
                     <NavR />
                     <SearchR />
