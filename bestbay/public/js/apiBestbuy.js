@@ -7,6 +7,7 @@ function searchBestbuy(b) {
 }
 
 function searchArtsBestbuy(b) {
+    classToggle("#PestBestbay .prelo", "none");
     $.ajax({
         //Cambiar a type: POST si necesario
         type: "GET",
@@ -18,10 +19,13 @@ function searchArtsBestbuy(b) {
         .done(function (data, textStatus, jqXHR) {
             if (console && console.log) {
                 console.log("ApiBestBuy Done");
-                createObjsB(data);
-                //console.log(artsBestbuy);
-                rellenarBestbuy();
             }
+            toast("Busqueda en BestBuy completada");
+            classToggle("#PestBestbay .prelo", "none");
+            createObjsB(data);
+            //console.log(artsBestbuy);
+            rellenarBestbuy();
+            
         })
         .fail(function (jqXHR, textStatus, errorThrown) {
             if (console && console.log) {
@@ -33,14 +37,19 @@ function searchArtsBestbuy(b) {
 function createUrlB(b) {
     let url;
     url = "https://api.bestbuy.com/v1/products";
-    url += "((search=" + b + ")&";
-    url += "(categoryPath.id=" + obCat.getCatBestbuy() + "))";
-    url += "?apiKey=A0iJvovzx1h8jN9IXhGSCwjm&sort=salePrice.asc&show=salePrice,thumbnailImage,name,image,description&format=json"
+    url += "((search=" + b + objectFilter.getBrands() + ")&";
+    url += "(salePrice<" + objectFilter.getMaxPrice() + ")&";
+    url += "(categoryPath.id=" + objectFilter.getCatBestbuy() + "))";
+    url += "?apiKey=A0iJvovzx1h8jN9IXhGSCwjm";
+    url += "&sort=salePrice." + objectFilter.getOrder();
+    url += "&pageSize=" + objectFilter.getSize();
+    url += "&show=salePrice,thumbnailImage,name,image,description&format=json"
     return url;
 }
 
 function createObjsB(d) {
     //console.log(d.products);
+    artsBestbuy = [];
     $(d.products).each(function (i, e) {
         let p = $(this)[0];
         //$('#bResults').append(cardReturn(p.name, p.salePrice, p.thumbnailImage));
