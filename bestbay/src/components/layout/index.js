@@ -206,14 +206,3 @@ export class RenderizarR extends Component {
         )
     }
 }
-
-
-
-
-
-
-
-
-
-
-
