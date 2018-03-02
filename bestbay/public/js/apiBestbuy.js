@@ -44,8 +44,11 @@ function createUrlB() {
     url += "?apiKey=A0iJvovzx1h8jN9IXhGSCwjm";
     url += "&sort=salePrice." + objectFilter.ordBestbuySet;
     url += "&pageSize=" + objectFilter.totalResults;
-    url += "&show=salePrice,thumbnailImage,name,image,description&format=json"
+    url += "&show=color,description,features.feature,image,url,thumbnailImage,";
+    url += "shortDescription,salePrice,name,manufacturer";
+    url += "&format=json";
     return url;
+    
 }
 
 function createObjsB(d) {
@@ -55,9 +58,17 @@ function createObjsB(d) {
         let p = $(this)[0];
         //$('#bResults').append(cardReturn(p.name, p.salePrice, p.thumbnailImage));
         let a = new artBestbuy();
-        a.imgC = p.thumbnailImage;
-        a.name = p.name;
-        a.price = p.salePrice;
+        a.imgC = p.image != null ? p.image : "./recursos/notFound.jpg";
+        a.imgT = p.thumbnailImage != null ? p.thumbnailImage : "./recursos/notFound.jpg";
+        a.name = p.name != null ? p.name : "No contiene nombre válido";
+        a.price = p.salePrice != null ? p.salePrice : 1;
+        a.description = p.description != null ? p.description : "No contiene descripción válida";
+        a.color = p.color != null ? p.color : "No contiene color válido";
+        a.manufacturer = p.manufacturer != null ? p.manufacturer : "No marca válida";
+        a.url = p.url != null ? p.url : "#";
+        a.features = p.features != null ? featuresToString(p.features): "No contiene características válidas";
+
         artsBestbuy.push(a);
     });
 }
+

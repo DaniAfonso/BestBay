@@ -69,7 +69,6 @@ function createUrlE() {
 }
 
 function createObjsE(root) {
-    console.log(root);
     //let items = root.findItemsByKeywordsResponse[0].searchResult[0].item || [];
     //let items = root.findItemsByCategoryResponse[0].searchResult[0].item || [];
     let items = root.findItemsAdvancedResponse[0].searchResult[0].item || [];
@@ -79,12 +78,15 @@ function createObjsE(root) {
         if (null != itemE.title[0] && null != itemE.viewItemURL) {
             //$('#eResults').append(cardReturn(title, price, pic));
             let a = new artEbay();
-            a.name = itemE.title[0];
-            a.imgT = itemE.galleryURL[0];
-            a.enlace = itemE.viewItemURL;
-            a.price = itemE.sellingStatus[0].convertedCurrentPrice[0].__value__;
+            a.name = itemE.title[0] != undefined ? itemE.title[0] : "No contiene nombre válido";
+            a.imgT = itemE.galleryURL[0] != undefined ? itemE.galleryURL[0] : "./recursos/notFound.jpg";
+            a.url = itemE.viewItemURL != undefined ? itemE.viewItemURL : "#";
+            a.price = itemE.sellingStatus[0].convertedCurrentPrice[0].__value__ != undefined ? itemE.sellingStatus[0].convertedCurrentPrice[0].__value__ : 1;
+            a.description += itemE.condition[0].conditionDisplayName[0] != undefined ? itemE.condition[0].conditionDisplayName[0] + " " : "";
+            a.description += itemE.location != undefined ? "Localizacion: " + itemE.location[0] + " ": "";
+            a.description += itemE.postalCode != undefined ? "Codigo postal: " + itemE.postalCode[0] + " ": "";
+
             artsEbay.push(a);
         }
     }
-    console.log(items[0]);
 }

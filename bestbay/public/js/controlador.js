@@ -89,7 +89,7 @@ function rellenarEbay() {
     $(artsEbay).each(function () {
         let a = $(this)[0];
         //console.log(a);
-        $('#eResults').append(cardNReturn(a.name, a.price, a.imgT));
+        $('#eResults').append(cardNReturn(a.name, a.description, a.imgT, a.url, a.price));
     });
 }
 
@@ -97,7 +97,7 @@ function rellenarBestbuy() {
     $(artsBestbuy).each(function () {
         let a = $(this)[0];
         //console.log(a);
-        $('#bResults').append(cardNReturn(a.name, a.price, a.imgC));
+        $('#bResults').append(cardNReturn(a.name, a.features, a.imgC, a.url, a.price));
     });
 }
 
