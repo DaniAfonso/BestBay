@@ -7,6 +7,7 @@ import { /*{*IndexRoute,}*/ Router, Route, browserHistory } from 'react-router'
 import { RenderizarR } from './components/layout/'
 
 import './css/materialize.min.css';
+import './css/simplePagination.css';
 import './css/style.css';
 
 var firebase = require("firebase");

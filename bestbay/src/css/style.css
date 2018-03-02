@@ -41,3 +41,30 @@
     justify-content: center;
     margin: 100px;
 }
+
+#bResults, #eResults {
+    display: flex;
+    flex-flow: column;
+}
+
+.card .card-image img {
+    display: block;
+    border-radius: 2px 2px 0 0;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 200px;
+    width: auto;    
+}
+
+.card .card-image {
+    display: flex;
+    justify-content: center;
+}
+
+#pagination-1 > ul, #pagination-2 ul{
+    display: flex;
+    justify-content: center;
+}

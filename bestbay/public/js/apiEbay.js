@@ -8,6 +8,7 @@ function searchEbay(b) {
 
 function searchArtsEbay(b) {
     classToggle("#PestEbay .prelo", "none");
+    console.log(objectFilter.getBrands());
     $.ajax({
         jsonp: "callback",
         dataType: "jsonp",
@@ -22,6 +23,7 @@ function searchArtsEbay(b) {
             console.log("ApiEbay completado");
             //console.log(artsEbay);
             rellenarEbay();
+            $cargarPaginacion();
         },
         error: function (error, codigo, algo) {
             console.error(error);
@@ -42,7 +44,7 @@ function createUrlE(b) {
     url += "&REST-PAYLOAD";
     url += "&paginationInput.entriesPerPage=10";
     url += "&keywords=" + b;
-    url += "&categoryId=" + obCat.getCatEbay();
+    url += "&categoryId=" + objectFilter.getCatEbay();
     url += "&descriptionSearch=true";
 
     /*
