@@ -94,15 +94,30 @@ class SearchR extends Component {
 
                     <div id="selOrder" className="input-field col s12">
                         <select className="selSort">
-                            <option value="asc" defaultValue >Precio ascendente</option>
-                            <option value="desc">Precio descendente</option>
+                            <option value="0" defaultValue >Precio ascendente</option>
+                            <option value="1">Precio descendente</option>
                         </select>
                         <label>Orden</label>
                     </div>
 
-                    <div className="input-field col s12">
+                    <div className="input-field col s12 m6">
+                        <input min="1" placeholder="Ej: 10" id="minPrice" type="number" className="validate" />
+                        <label htmlFor="minPrice">Precio Min</label>
+                    </div>
+
+                    <div className="input-field col s12 m6">
                         <input min="1" placeholder="Ej: 75" id="maxPrice" type="number" className="validate" />
-                        <label htmlFor="maxPrice">Precio máximo</label>
+                        <label htmlFor="maxPrice">Precio Max</label>
+                    </div>
+
+                    <div className="input-field col s12 m6">
+                        <input min="1" placeholder="Ej: 100" id="totalResults" type="number" className="validate" />
+                        <label htmlFor="totalResults">Total Results</label>
+                    </div>
+
+                    <div className="input-field col s12 m6">
+                        <input min="1" placeholder="Ej: 10" id="pageResults" type="number" className="validate" />
+                        <label htmlFor="pageResults">Page Results</label>
                     </div>
 
                 </fieldset>

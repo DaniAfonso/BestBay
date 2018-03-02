@@ -33,10 +33,12 @@ function search() {
     let b = $('#fBusqueda').val();
     if (b.length >= 2) {
         sortOrder();
-        setMaxPrice();
+        setRangePrice();
+        setNumItemsSearch();
+        objectFilter.setKeyword(b);
         $('#eResults, #bResults').empty();
-        searchEbay(b);
-        searchBestbuy(b);
+        searchEbay();
+        searchBestbuy();
     } else {
         toast("Debes escribir almenos dos caracteres");
     }
@@ -69,9 +71,18 @@ function sortOrder() {
     objectFilter.setOrder(s);
 }
 
-function setMaxPrice() {
+function setRangePrice() {
     let maxPrice = $('#maxPrice').val();
-    maxPrice > 0 ? objectFilter.setMaxPrice(maxPrice) : objectFilter.setMaxPrice(9999);
+    let minPrice = $('#minPrice').val();
+    objectFilter.setMaxPrice(maxPrice);
+    objectFilter.setMinPrice(minPrice);
+}
+
+function setNumItemsSearch(){
+    let totalResults = $('#totalResults').val();
+    let pageResults = $('#pageResults').val();
+    objectFilter.setTotalResults(totalResults);
+    objectFilter.setPageResults(pageResults);
 }
 
 function rellenarEbay() {
