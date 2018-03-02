@@ -1,10 +1,4 @@
 import React,{Component} from 'react'
-// import Reorder, {
-//   reorder,
-//   reorderImmutable,
-//   reorderFromTo,
-//   reorderFromToImmutable
-// } from 'react-reorder';
 
 import Reorder, {
   reorder,

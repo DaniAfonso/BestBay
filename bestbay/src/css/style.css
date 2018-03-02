@@ -1,3 +1,4 @@
+
 .nav-extended {
     margin-bottom: 15px;
 }
@@ -5,6 +6,7 @@
 .cardFiltro {
     padding: 10px;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .cardFiltro>fieldset>div {
@@ -69,7 +71,13 @@
     justify-content: center;
 }
 
+<<<<<<< HEAD
 .logTitulo {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: black;
+=======
+#pagination-1, #pagination-2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+>>>>>>> a45998567035e7dc37cabf97fcc3a1aea166b9f2
 }

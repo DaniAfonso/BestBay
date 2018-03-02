@@ -7,7 +7,7 @@ function searchEbay(b) {
 }
 
 function searchArtsEbay(b) {
-    classToggle("#PestEbay .prelo", "none");
+    classToggle("#divEbay .prelo", "none");
     console.log(objectFilter.getBrands());
     $.ajax({
         jsonp: "callback",
@@ -19,11 +19,11 @@ function searchArtsEbay(b) {
         },
         complete: function () {
             toast("Busqueda en Ebay completada");
-            classToggle("#PestEbay .prelo", "none");
+            classToggle("#divEbay .prelo", "none");
             console.log("ApiEbay completado");
             //console.log(artsEbay);
             rellenarEbay();
-            $cargarPaginacion();
+            paginar("#eResults .card", "#pagination-1", 10);
         },
         error: function (error, codigo, algo) {
             console.error(error);
@@ -42,10 +42,12 @@ function createUrlE(b) {
     url += "&GLOBAL-ID=EBAY-ES";
     url += "&RESPONSE-DATA-FORMAT=JSON";
     url += "&REST-PAYLOAD";
-    url += "&paginationInput.entriesPerPage=10";
+    url += "&paginationInput.entriesPerPage=" + objectFilter.size;
     url += "&keywords=" + b;
     url += "&categoryId=" + objectFilter.getCatEbay();
     url += "&descriptionSearch=true";
+    //url += "&sortOrder=asc";
+
 
     /*
         var url = "http://svcs.ebay.com/services/search/FindingService/v1";

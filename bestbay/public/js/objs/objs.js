@@ -30,7 +30,7 @@ function optFiltrado() {
     this.maxPrice = 1000;
     this.order = 'asc';
     this.brands = "";
-    this.size = 10;
+    this.size = 100;
 }
 
 optFiltrado.prototype.selCats = function (e) {
