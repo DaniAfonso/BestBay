@@ -6,12 +6,12 @@ function searchEbay(b) {
     searchArtsEbay(b);
 }
 
-function searchArtsEbay(b) {
+function searchArtsEbay() {
     classToggle("#divEbay .prelo", "none");
     $.ajax({
         jsonp: "callback",
         dataType: "jsonp",
-        url: createUrlE(b),
+        url: createUrlE(),
         success: function (response) {
             //console.log(response);
             createObjsE(response);
@@ -22,7 +22,7 @@ function searchArtsEbay(b) {
             console.log("ApiEbay completado");
             //console.log(artsEbay);
             rellenarEbay();
-            paginar("#eResults .card", "#pagination-1", 10);
+            paginar("#eResults .card", "#pagination-1", objectFilter.pageResults);
         },
         error: function (error, codigo, algo) {
             console.error(error);
@@ -32,7 +32,7 @@ function searchArtsEbay(b) {
     });
 }
 
-function createUrlE(b) {
+function createUrlE() {
 
     var url = "http://svcs.ebay.com/services/search/FindingService/v1";
     url += "?OPERATION-NAME=findItemsAdvanced";
@@ -41,13 +41,16 @@ function createUrlE(b) {
     url += "&GLOBAL-ID=EBAY-ES";
     url += "&RESPONSE-DATA-FORMAT=JSON";
     url += "&REST-PAYLOAD";
-    url += "&paginationInput.entriesPerPage=" + objectFilter.size;
+    url += "&paginationInput.entriesPerPage=" + objectFilter.totalResults;
     url += "&sortOrder=" + objectFilter.ordEbay;
-    url += "&keywords=" + b;
+    url += "&keywords=" + objectFilter.keyword;
     url += "&categoryId=" + objectFilter.catEbaySet;
     url += "&descriptionSearch=true";
+    url += "&itemFilter(0).name=MaxPrice";
+    url += "&itemFilter(0).value=" + objectFilter.maxPrice;
+    url += "&itemFilter(1).name=MinPrice";
+    url += "&itemFilter(1).value=" + objectFilter.minPrice;
     //url += "&sortOrder=asc";
-
 
     /*
         var url = "http://svcs.ebay.com/services/search/FindingService/v1";
