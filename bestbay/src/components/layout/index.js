@@ -1,12 +1,4 @@
 import React, { Component } from 'react';
-import {
-    BrowserRouter as Router,
-    Link,
-    Route,
-    Switch,
-} from 'react-router-dom';
-import GoogleLogin from '../social/GoogleLogin';
-import FacebookLogin from '../social/FacebookLogin';
 
 class NavR extends Component {
     render() {
@@ -18,13 +10,16 @@ class NavR extends Component {
                     </a>
                     <ul id="nav-mobile" className="right hide-on-med-and-down">
                         <li>
-                            <a href="sass.html">Sass</a>
+                            <a id="loginGithub"><img src="recursos/logos/github.png" />Login GitHub</a>
                         </li>
                         <li>
-                            <a href="badges.html">Components</a>
+                            <a id="loginFace"><img src="recursos/logos/facebook.png" />Login Facebook</a>
                         </li>
                         <li>
-                            <a href="collapsible.html">JavaScript</a>
+                            <a id="loginTwitter"><img src="recursos/logos/twitter.png" />Login Twitter</a>
+                        </li>
+                        <li>
+                            <a id="loginGoogle"><img src="recursos/logos/google.png" />Login Google</a>
                         </li>
                     </ul>
                     <ul className="side-nav" id="mobile-demo">
@@ -60,7 +55,7 @@ class NavR extends Component {
 class SearchR extends Component {
     render() {
         return (
-            <div className="cardFiltro col s12 m4">
+            <div className="cardFiltro col s12 m4 l3 xl2">
                 <fieldset>
 
                     <div className="input-field col s12">
@@ -123,7 +118,7 @@ class MacbookR extends Component {
                 <h5 className="header">MacBook Pro 15 i7 7700HQ</h5>
                 <div className="card horizontal">
                     <div className="cardImg card-image">
-                        <img src="recursos/macbookpro.jpg" />
+                        <img src="recursos/macbookpro.jpg" alt="imagen carta" />
                     </div>
                     <div className="card-stacked">
                         <div className="card-content">
@@ -175,18 +170,20 @@ class PestaR extends Component {
                     <SpinerR />
 
                 </div>
-                <div id="PestExtra" className="col s12 m8 pest">
-                    <SpinerR />
-                    <div className="col s6">
+                <div id="PestExtra" className="col s12 m8 l9 xl10 pest">
+
+                    <div id="divEbay" className="col s12 m6">                        
                         <div className="parentPaginator col s12">
                             <div id="pagination-1"></div>
                         </div>
+                        <SpinerR />
                         <div id="eResults" className="col s12"></div>
                     </div>
-                    <div className="col s6">
+                    <div id="divBestbuy" className="col s12 m6">
                         <div className="parentPaginator col s12">
                             <div id="pagination-2"></div>
                         </div>
+                        <SpinerR />
                         <div id="bResults" className="col s12"></div>
                     </div>
                 </div>
