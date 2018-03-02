@@ -19,7 +19,7 @@ function cardReturn(titulo, descripcion, img) {
     return p;
 }
 
-function cardNReturn(titulo, descripcion, img) {
+function cardNReturn(titulo, descripcion, img, link, price) {
     let t = titulo.length > 20 ? titulo.substring(0, 20) + "..." : titulo;
     let c = '<div class="col s12 card artCard">' +
         '<div class="card-image waves-effect waves-block waves-light">' +
@@ -27,7 +27,7 @@ function cardNReturn(titulo, descripcion, img) {
         '</div>' +
         '<div class="card-content">' +
         '<span class="card-title activator grey-text text-darken-4">' + t + '<i class="material-icons right">more_vert</i></span>' +
-        '<p><a href="#">This is a link</a></p>' +
+        '<p><a href=" ' + link + ' ">Comprar ' + price + "€" + '</a></p>' +
         '</div>' +
         '<div class="card-reveal">' +
         '<span class="card-title grey-text text-darken-4">' + titulo + '<i class="material-icons right">close</i></span>' +
@@ -90,4 +90,13 @@ function paginar(ele, loc, pag) {
         paginationSelector: loc,
         itemsPerPage: pag
     });
-};
+}
+
+
+function featuresToString(f) {
+    let fs = "";
+    $(f).each(function () {
+        fs += $(this)[0].feature + ". ";
+    })
+    return fs;
+}

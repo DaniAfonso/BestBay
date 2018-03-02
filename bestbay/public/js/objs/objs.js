@@ -2,6 +2,7 @@ function artEbay() {
     this.imgC = "";
     this.imgT = "";
     this.name = "";
+
     this.description = "";
     this.price = "";
 
@@ -9,16 +10,21 @@ function artEbay() {
     this.location = "";
     this.categoriaId = "";
     this.categoria = "";
-
-    this.enlace = "";
+    this.url = "";
 }
 
 function artBestbuy() {
     this.imgC = "";
     this.imgT = "";
     this.name = "";
+
     this.description = "";
     this.price = "";
+
+    this.color = "";
+    this.manufacturer = "";
+    this.url = "";
+    this.features = "";
 }
 
 function optFiltrado() {
@@ -50,8 +56,8 @@ optFiltrado.prototype.setKeyword = function (e) {
 }
 
 optFiltrado.prototype.selCats = function (e) {
-    this.catSelEbay = this.catEbay[e];
-    this.catSelBestbuy = this.catBestbuy[e];
+    this.catEbaySet = this.catEbay[e];
+    this.catBestbuySet = this.catBestbuy[e];
 }
 
 optFiltrado.prototype.setOrder = function (e) {
