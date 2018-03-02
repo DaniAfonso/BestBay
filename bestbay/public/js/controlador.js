@@ -68,3 +68,4 @@ function rellenarBestbuy() {
         $('#bResults').append(cardReturn(a.name, a.price, a.imgC));
     });
 }
+
