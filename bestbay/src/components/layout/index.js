@@ -206,16 +206,16 @@ class FooterR extends Component {
                         <h5 className="white-text">Enlaces</h5>
                         <ul>
                             <li>
-                                <a className="grey-text text-lighten-3" href="#!">Daniel Afonso</a>
+                                <a className="grey-text text-lighten-3" href="https://github.com/DaniAfonso">Daniel Afonso</a>
                             </li>
                             <li>
-                                <a className="grey-text text-lighten-3" href="#!">Luis</a>
+                                <a className="grey-text text-lighten-3" href="https://github.com/Luischamo3">Luis Sanfiel </a>
                             </li>
                             <li>
-                                <a className="grey-text text-lighten-3" href="#!">Pascolo</a>
+                                <a className="grey-text text-lighten-3" href="https://github.com/jesdagonpas">Jesus Pascolo</a>
                             </li>
                             <li>
-                                <a className="grey-text text-lighten-3" href="#!">GitRepo</a>
+                                <a className="grey-text text-lighten-3" href="https://github.com/DaniAfonso/bestbayreact">GitRepo</a>
                             </li>
                         </ul>
                     </div>
