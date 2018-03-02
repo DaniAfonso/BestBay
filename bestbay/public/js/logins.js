@@ -32,52 +32,32 @@ function abrirLoginProcess(){
         var token = result.credential.accessToken;
         var user = result.user;
         console.log(user);
-        $('.nav-wrapper').find('ul').first().empty();
-        $('.nav-wrapper').children().first().after('<div style="display: flex; flex-flow: row wrap; width: 350px; margin-left: 600px; margin-top: 0px;justify-content: center; align-items: center;"><img src="'+user.photoURL+'" style="width: 32px; height: 32px;"/><p>Bienvenido '+user.displayName+'</p>');
-        // ...
-      }).catch(function(error) {
+        $('.nav-wrapper').find('ul').first().hide();
+        $('.nav-wrapper').children().first().after('<div id="usuarioRegistrado" style="position: absolute; display: flex; flex-flow: row wrap; width: 500px; margin-left: 60%;justify-content: space-between; align-items: center;"><img src="'+user.photoURL+'" style="width: 32px; height: 32px;"/><p>Bienvenido '+user.displayName+'</p><a id="logOut" class="waves-effect waves-light btn"><i class="material-icons left">&#xE879;</i>LogOut</a></div>');
+        $('#logOut').click(function(){
+            desloguearUsuario();
+        });
+    }).catch(function(error) {
         var errorMessage = error.message;
         // Email por si decidimos sacar pantallazo de que esta mal el email
         var email = error.email;
         console.log(errorMessage);
       });
 }
-/*
-  firebase.auth().getRedirectResult().then(function(result) {
-    if (result.credential) {
-      // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-      var token = result.credential.accessToken;
-      // ...
-    }
-    // The signed-in user info.
-    var user = result.user;
-  }).catch(function(error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // The email of the user's account used.
-    var email = error.email;
-    // The firebase.auth.AuthCredential type that was used.
-    var credential = error.credential;
-    // ...
-  });*/
-/*
+
+function desloguearUsuario(){
   firebase.auth().signOut().then(function() {
-    // Sign-out successful.
-     <ul id="nav-mobile" className="right hide-on-med-and-down">
-                        <li>
-                            <a id="loginGithub"><img src="recursos/logos/github.png"/>Login GitHub</a>
-                        </li>
-                        <li>
-                            <a id="loginFace"><img src="recursos/logos/facebook.png"/>Login Facebook</a>
-                        </li>
-                        <li>
-                            <a id="loginTwitter"><img src="recursos/logos/twitter.png"/>Login Twitter</a>
-                        </li>
-                        <li>
-                            <a id="loginGoogle"><img src="recursos/logos/google.png"/>Login Google</a>
-                        </li>
-                    </ul>
+    $('.nav-wrapper').find('#usuarioRegistrado').remove();
+    /*$('.nav-wrapper').children().first().after('<ul id="nav-mobile" className="right hide-on-med-and-down">' +
+                                            '<li><h5>Login: </h5></li>' +
+                                            '<li><a id="loginGithub"><img src="recursos/logos/github.png"/></a></li>'+
+                                            '<li><a id="loginFace"><img src="recursos/logos/facebook.png"/></a></li>'+
+                                            '<li><a id="loginTwitter"><img src="recursos/logos/twitter.png"/></a></li>'+
+                                            '<li><a id="loginGoogle"><img src="recursos/logos/google.png"/></a></li>'+
+                                            '</ul>');
+    */
+   $('.nav-wrapper').find('ul').first().show();
   }).catch(function(error) {
-    // An error happened.
-  });*/
+    console.log(error.message);
+  });
+}

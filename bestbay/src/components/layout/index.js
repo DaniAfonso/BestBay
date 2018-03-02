@@ -18,16 +18,19 @@ class NavR extends Component {
                     </a>
                     <ul id="nav-mobile" className="right hide-on-med-and-down">
                         <li>
-                            <a id="loginGithub"><img src="recursos/logos/github.png"/>Login GitHub</a>
+                            <h5 className="logTitulo">Logueate: </h5>
                         </li>
                         <li>
-                            <a id="loginFace"><img src="recursos/logos/facebook.png"/>Login Facebook</a>
+                            <a id="loginGithub"><img src="recursos/logos/github.png"/></a>
                         </li>
                         <li>
-                            <a id="loginTwitter"><img src="recursos/logos/twitter.png"/>Login Twitter</a>
+                            <a id="loginFace"><img src="recursos/logos/facebook.png"/></a>
                         </li>
                         <li>
-                            <a id="loginGoogle"><img src="recursos/logos/google.png"/>Login Google</a>
+                            <a id="loginTwitter"><img src="recursos/logos/twitter.png"/></a>
+                        </li>
+                        <li>
+                            <a id="loginGoogle"><img src="recursos/logos/google.png"/></a>
                         </li>
                     </ul>
                     <ul className="side-nav" id="mobile-demo">
