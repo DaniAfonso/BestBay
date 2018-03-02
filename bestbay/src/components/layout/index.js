@@ -10,21 +10,6 @@ class NavR extends Component {
                     </a>
                     <ul id="nav-mobile" className="right hide-on-med-and-down">
                         <li>
-<<<<<<< HEAD
-                            <h5 className="logTitulo">Logueate: </h5>
-                        </li>
-                        <li>
-                            <a id="loginGithub"><img src="recursos/logos/github.png"/></a>
-                        </li>
-                        <li>
-                            <a id="loginFace"><img src="recursos/logos/facebook.png"/></a>
-                        </li>
-                        <li>
-                            <a id="loginTwitter"><img src="recursos/logos/twitter.png"/></a>
-                        </li>
-                        <li>
-                            <a id="loginGoogle"><img src="recursos/logos/google.png"/></a>
-=======
                             <a id="loginGithub"><img src="recursos/logos/github.png" />Login GitHub</a>
                         </li>
                         <li>
@@ -35,7 +20,6 @@ class NavR extends Component {
                         </li>
                         <li>
                             <a id="loginGoogle"><img src="recursos/logos/google.png" />Login Google</a>
->>>>>>> a45998567035e7dc37cabf97fcc3a1aea166b9f2
                         </li>
                     </ul>
                     <ul className="side-nav" id="mobile-demo">
@@ -188,7 +172,7 @@ class PestaR extends Component {
                 </div>
                 <div id="PestExtra" className="col s12 m8 l9 xl10 pest">
 
-                    <div id="divEbay" className="col s12 m6">                        
+                    <div id="divEbay" className="col s12 m6">
                         <div className="parentPaginator col s12">
                             <div id="pagination-1"></div>
                         </div>
