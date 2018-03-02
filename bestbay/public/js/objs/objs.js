@@ -1,13 +1,32 @@
+function conversiones() {
+    this.conv = new Array();
+    this.conv.eur = 1;
+    this.conv.gbp = 1;
+    this.conv.jpy = 1;
+    this.conv.usd = 1;
+
+    this.convSel = "eur";
+    this.simbol = "€";
+}
+
+conversiones.prototype.setCambio = function (e, s) {
+    this.convSel = e;
+    this.simbol = s;
+    console.log(this)
+}
+
 function artEbay() {
     this.imgC = "";
     this.imgT = "";
     this.name = "";
 
     this.description = "";
-    this.price = "";
+    this.price = 0;
+    this.priceConv = 0;
 
     this.condition = "";
     this.location = "";
+    this.shippingCost = "";
     this.categoriaId = "";
     this.categoria = "";
     this.url = "";
@@ -19,7 +38,8 @@ function artBestbuy() {
     this.name = "";
 
     this.description = "";
-    this.price = "";
+    this.price = 0;
+    this.priceConv = 0;
 
     this.color = "";
     this.manufacturer = "";

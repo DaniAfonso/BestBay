@@ -23,7 +23,7 @@ function searchArtsBestbuy() {
             toast("Busqueda en BestBuy completada");
             classToggle("#divBestbuy .prelo", "none");
             createObjsB(data);
-            //console.log(artsBestbuy);
+            addBestbuyPriceConv();
             rellenarBestbuy();
             paginar("#bResults .card", "#pagination-2", objectFilter.pageResults);
         })
@@ -48,7 +48,7 @@ function createUrlB() {
     url += "shortDescription,salePrice,name,manufacturer";
     url += "&format=json";
     return url;
-    
+
 }
 
 function createObjsB(d) {
@@ -66,7 +66,7 @@ function createObjsB(d) {
         a.color = p.color != null ? p.color : "No contiene color válido";
         a.manufacturer = p.manufacturer != null ? p.manufacturer : "No marca válida";
         a.url = p.url != null ? p.url : "#";
-        a.features = p.features != null ? featuresToString(p.features): "No contiene características válidas";
+        a.features = p.features != null ? featuresToString(p.features) : "No contiene características válidas";
 
         artsBestbuy.push(a);
     });

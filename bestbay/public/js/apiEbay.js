@@ -19,8 +19,7 @@ function searchArtsEbay() {
         complete: function () {
             toast("Busqueda en Ebay completada");
             classToggle("#divEbay .prelo", "none");
-            console.log("ApiEbay completado");
-            //console.log(artsEbay);
+            addEbayPriceConv();
             rellenarEbay();
             paginar("#eResults .card", "#pagination-1", objectFilter.pageResults);
         },
@@ -33,12 +32,12 @@ function searchArtsEbay() {
 }
 
 function createUrlE() {
-
     var url = "http://svcs.ebay.com/services/search/FindingService/v1";
+
     url += "?OPERATION-NAME=findItemsAdvanced";
     url += "&SERVICE-VERSION=1.0.0";
     url += "&SECURITY-APPNAME=DaniAf-BestBay-PRD-d10683bd3-9ff9acfe";
-    url += "&GLOBAL-ID=EBAY-ES";
+    url += "&GLOBAL-ID=EBAY-US";
     url += "&RESPONSE-DATA-FORMAT=JSON";
     url += "&REST-PAYLOAD";
     url += "&paginationInput.entriesPerPage=" + objectFilter.totalResults;
@@ -50,21 +49,7 @@ function createUrlE() {
     url += "&itemFilter(0).value=" + objectFilter.maxPrice;
     url += "&itemFilter(1).name=MinPrice";
     url += "&itemFilter(1).value=" + objectFilter.minPrice;
-    //url += "&sortOrder=asc";
 
-    /*
-        var url = "http://svcs.ebay.com/services/search/FindingService/v1";
-        url += "?OPERATION-NAME=findItemsByCategory";
-        url += "&SERVICE-VERSION=1.0.0";
-        url += "&SECURITY-APPNAME=DaniAf-BestBay-PRD-d10683bd3-9ff9acfe";
-        url += "&GLOBAL-ID=EBAY-ES";
-        url += "&RESPONSE-DATA-FORMAT=JSON";
-        url += "&REST-PAYLOAD";
-        url += "&categoryId=" + catMovilE;
-        url += "&paginationInput.entriesPerPage=10";
-        url += "&aspectFilter(0).aspectName=Genre";
-        url += "&aspectFilter(0).aspectValueName=" + b;
-    */
     return url;
 }
 
@@ -81,10 +66,11 @@ function createObjsE(root) {
             a.name = itemE.title[0] != undefined ? itemE.title[0] : "No contiene nombre válido";
             a.imgT = itemE.galleryURL[0] != undefined ? itemE.galleryURL[0] : "./recursos/notFound.jpg";
             a.url = itemE.viewItemURL != undefined ? itemE.viewItemURL : "#";
-            a.price = itemE.sellingStatus[0].convertedCurrentPrice[0].__value__ != undefined ? itemE.sellingStatus[0].convertedCurrentPrice[0].__value__ : 1;
+            a.shippingCost = itemE.shippingInfo[0].shippingServiceCost != undefined ? parseInt(itemE.shippingInfo[0].shippingServiceCost[0].__value__) : 0;
+            a.price = itemE.sellingStatus[0].convertedCurrentPrice[0].__value__ != undefined ? parseInt(itemE.sellingStatus[0].convertedCurrentPrice[0].__value__) : 1;
             a.description += itemE.condition[0].conditionDisplayName[0] != undefined ? itemE.condition[0].conditionDisplayName[0] + " " : "";
-            a.description += itemE.location != undefined ? "Localizacion: " + itemE.location[0] + " ": "";
-            a.description += itemE.postalCode != undefined ? "Codigo postal: " + itemE.postalCode[0] + " ": "";
+            a.description += itemE.location != undefined ? "Localizacion: " + itemE.location[0] + " " : "";
+            a.description += itemE.postalCode != undefined ? "Codigo postal: " + itemE.postalCode[0] + " " : "";
 
             artsEbay.push(a);
         }

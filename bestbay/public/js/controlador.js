@@ -1,4 +1,5 @@
 let objectFilter;
+let objectConv;
 
 $(document).ready(function () {
     $('select').material_select();
@@ -6,6 +7,9 @@ $(document).ready(function () {
 });
 
 function inicializar() {
+    objectFilter = new optFiltrado();
+    objectConv = new conversiones();
+
     $('#fBtnSearch').click(function () {
         search();
     });
@@ -18,6 +22,9 @@ function inicializar() {
     $('.dBra').click(function () {
         changeBrand($(this)[0]);
     });
+    $('.dConv').click(function () {
+        changeConv($(this)[0]);
+    });
     $('.dropdown-button').dropdown({
         inDuration: 300,
         outDuration: 225,
@@ -26,7 +33,6 @@ function inicializar() {
         gutter: 0,
         belowOrigin: false
     });
-    objectFilter = new optFiltrado();
 }
 
 function search() {
@@ -37,8 +43,8 @@ function search() {
         setNumItemsSearch();
         objectFilter.setKeyword(b);
         $('#eResults, #bResults').empty();
-        searchEbay();
-        searchBestbuy();
+        searchConversion();
+        
     } else {
         toast("Debes escribir almenos dos caracteres");
     }
@@ -66,6 +72,14 @@ function changeBrand(e) {
     $('#dropBrandA')[0].childNodes[0].textContent = e.text;
 }
 
+function changeConv(e) {
+    let tipoConv = $(e).attr("id");
+    let tip = tipoConv.substring(0, tipoConv.length - 1);
+    let sim = tipoConv.substring(3, tipoConv.length);
+    objectConv.setCambio(tip, sim);
+    $('#dropConvA')[0].childNodes[0].textContent = e.text;
+}
+
 function sortOrder() {
     let s = $('.selSort option:selected').val();
     objectFilter.setOrder(s);
@@ -89,7 +103,7 @@ function rellenarEbay() {
     $(artsEbay).each(function () {
         let a = $(this)[0];
         //console.log(a);
-        $('#eResults').append(cardNReturn(a.name, a.description, a.imgT, a.url, a.price));
+        $('#eResults').append(cardNReturn(a.name, a.description, a.imgT, a.url, a.priceConv, objectConv.simbol));
     });
 }
 
@@ -97,7 +111,7 @@ function rellenarBestbuy() {
     $(artsBestbuy).each(function () {
         let a = $(this)[0];
         //console.log(a);
-        $('#bResults').append(cardNReturn(a.name, a.features, a.imgC, a.url, a.price));
+        $('#bResults').append(cardNReturn(a.name, a.features, a.imgC, a.url, a.priceConv, objectConv.simbol));
     });
 }
 

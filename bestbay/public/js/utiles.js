@@ -19,7 +19,8 @@ function cardReturn(titulo, descripcion, img) {
     return p;
 }
 
-function cardNReturn(titulo, descripcion, img, link, price) {
+function cardNReturn(titulo, descripcion, img, link, price, moneda) {
+    price = price.toFixed(2);
     let t = titulo.length > 20 ? titulo.substring(0, 20) + "..." : titulo;
     let c = '<div class="col s12 card artCard">' +
         '<div class="card-image waves-effect waves-block waves-light">' +
@@ -27,7 +28,7 @@ function cardNReturn(titulo, descripcion, img, link, price) {
         '</div>' +
         '<div class="card-content">' +
         '<span class="card-title activator grey-text text-darken-4">' + t + '<i class="material-icons right">more_vert</i></span>' +
-        '<p><a href=" ' + link + ' ">Comprar ' + price + "€" + '</a></p>' +
+        '<p><a href=" ' + link + ' ">Comprar ' + price + " " + moneda + '</a></p>' +
         '</div>' +
         '<div class="card-reveal">' +
         '<span class="card-title grey-text text-darken-4">' + titulo + '<i class="material-icons right">close</i></span>' +
@@ -92,11 +93,25 @@ function paginar(ele, loc, pag) {
     });
 }
 
-
 function featuresToString(f) {
     let fs = "";
     $(f).each(function () {
         fs += $(this)[0].feature + ". ";
     })
     return fs;
+}
+
+function addEbayPriceConv() {
+    $(artsEbay).each(function () {
+        let a = $(this)[0];
+        $(this)[0].priceConv = objectConv.conv[objectConv.convSel] * ($(this)[0].price + $(this)[0].shippingCost);
+        let b = $(this)[0];
+    });
+}
+
+function addBestbuyPriceConv() {
+    $(artsBestbuy).each(function () {
+        let a = $(this)[0];
+        $(this)[0].priceConv = objectConv.conv[objectConv.convSel] * $(this)[0].price;
+    });
 }

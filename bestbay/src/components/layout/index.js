@@ -110,6 +110,18 @@ class SearchR extends Component {
                         <label htmlFor="maxPrice">Precio Max</label>
                     </div>
 
+                    <div className="col s12">
+                        <ul id="dropConv" className="dropdown-content">
+                            <li><a className="dConv" id="usd$">USD</a></li>
+                            <li><a className="dConv" id="eur€">EUR</a></li>
+                            <li><a className="dConv" id="gbp£">GBP</a></li>
+                            <li><a className="dConv" id="jpy¥">JPY</a></li>
+                        </ul>
+                        <a id="dropConvA" className="btn dropdown-button" data-activates="dropConv">Moneda
+                            <i className="material-icons right">arrow_drop_down</i>
+                        </a>
+                    </div>
+
                     <div className="input-field col s12 m6">
                         <input min="1" placeholder="Ej: 100" id="totalResults" type="number" className="validate" />
                         <label htmlFor="totalResults">Total Results</label>
