@@ -42,10 +42,12 @@ function createUrlE(b) {
     url += "&GLOBAL-ID=EBAY-ES";
     url += "&RESPONSE-DATA-FORMAT=JSON";
     url += "&REST-PAYLOAD";
-    url += "&paginationInput.entriesPerPage=10";
+    url += "&paginationInput.entriesPerPage=" + objectFilter.size;
     url += "&keywords=" + b;
     url += "&categoryId=" + objectFilter.getCatEbay();
     url += "&descriptionSearch=true";
+    //url += "&sortOrder=asc";
+
 
     /*
         var url = "http://svcs.ebay.com/services/search/FindingService/v1";

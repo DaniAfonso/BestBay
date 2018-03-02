@@ -8,39 +8,39 @@ firebase.initializeApp(config);
 
 var provider = null;
 
-$(document).ready(function(){
-    $('#loginFace').click(function (){
+$(document).ready(function () {
+    $('#loginFace').click(function () {
         provider = new firebase.auth.FacebookAuthProvider();
         abrirLoginProcess();
     });
-    $('#loginGoogle').click(function (){
+    $('#loginGoogle').click(function () {
         provider = new firebase.auth.GoogleAuthProvider();
         abrirLoginProcess();
     });
-    $('#loginTwitter').click(function (){
+    $('#loginTwitter').click(function () {
         provider = new firebase.auth.TwitterAuthProvider();
         abrirLoginProcess();
     });
-    $('#loginGithub').click(function (){
+    $('#loginGithub').click(function () {
         provider = new firebase.auth.GithubAuthProvider();
         abrirLoginProcess();
     });
 });
 
-function abrirLoginProcess(){
-    firebase.auth().signInWithPopup(provider).then(function(result) {
+function abrirLoginProcess() {
+    firebase.auth().signInWithPopup(provider).then(function (result) {
         var token = result.credential.accessToken;
         var user = result.user;
         console.log(user);
         $('.nav-wrapper').find('ul').first().empty();
-        $('.nav-wrapper').children().first().after('<div style="display: flex; flex-flow: row wrap; width: 350px; margin-left: 600px; margin-top: 0px;justify-content: center; align-items: center;"><img src="'+user.photoURL+'" style="width: 32px; height: 32px;"/><p>Bienvenido '+user.displayName+'</p>');
+        $('.nav-wrapper').children().first().after('<div style="display: flex; flex-flow: row wrap; width: 350px; margin-left: 600px; margin-top: 0px;justify-content: center; align-items: center;"><img src="' + user.photoURL + '" style="width: 32px; height: 32px;"/><p>Bienvenido ' + user.displayName + '</p>');
         // ...
-      }).catch(function(error) {
+    }).catch(function (error) {
         var errorMessage = error.message;
         // Email por si decidimos sacar pantallazo de que esta mal el email
         var email = error.email;
         console.log(errorMessage);
-      });
+    });
 }
 /*
   firebase.auth().getRedirectResult().then(function(result) {

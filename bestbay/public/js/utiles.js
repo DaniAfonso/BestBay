@@ -88,11 +88,11 @@ let $cargarPaginacion = function () {
     paginate({
         itemSelector: "#eResults .card",
         paginationSelector: "#pagination-1",
-        itemsPerPage: 1
+        itemsPerPage: 10
     });
     paginate({
         itemSelector: "#bResults .card",
         paginationSelector: "#pagination-2",
-        itemsPerPage: 1
+        itemsPerPage: 10
     });
 };
