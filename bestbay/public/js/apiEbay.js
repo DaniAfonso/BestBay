@@ -8,7 +8,6 @@ function searchEbay(b) {
 
 function searchArtsEbay(b) {
     classToggle("#divEbay .prelo", "none");
-    console.log(objectFilter.getBrands());
     $.ajax({
         jsonp: "callback",
         dataType: "jsonp",
@@ -43,6 +42,7 @@ function createUrlE(b) {
     url += "&RESPONSE-DATA-FORMAT=JSON";
     url += "&REST-PAYLOAD";
     url += "&paginationInput.entriesPerPage=" + objectFilter.size;
+    url += "&sortOrder=" + objectFilter.ordEbay;
     url += "&keywords=" + b;
     url += "&categoryId=" + objectFilter.catEbaySet;
     url += "&descriptionSearch=true";
