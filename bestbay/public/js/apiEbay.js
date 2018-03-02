@@ -7,7 +7,7 @@ function searchEbay(b) {
 }
 
 function searchArtsEbay(b) {
-    classToggle("#PestEbay .prelo", "none");
+    classToggle("#divEbay .prelo", "none");
     console.log(objectFilter.getBrands());
     $.ajax({
         jsonp: "callback",
@@ -19,7 +19,7 @@ function searchArtsEbay(b) {
         },
         complete: function () {
             toast("Busqueda en Ebay completada");
-            classToggle("#PestEbay .prelo", "none");
+            classToggle("#divEbay .prelo", "none");
             console.log("ApiEbay completado");
             //console.log(artsEbay);
             rellenarEbay();

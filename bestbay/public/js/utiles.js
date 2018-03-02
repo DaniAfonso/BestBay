@@ -21,20 +21,20 @@ function cardReturn(titulo, descripcion, img) {
 
 function cardNReturn(titulo, descripcion, img) {
     let t = titulo.length > 20 ? titulo.substring(0, 20) + "..." : titulo;
-    let c = '<div class="col s12 card artCard">'+
-    '<div class="card-image waves-effect waves-block waves-light">'+
-      '<img class="activator" src=" ' + img + ' ">' +
-    '</div>'+
-    '<div class="card-content">'+
-      '<span class="card-title activator grey-text text-darken-4">' + t + '<i class="material-icons right">more_vert</i></span>'+
-      '<p><a href="#">This is a link</a></p>'+
-    '</div>'+
-    '<div class="card-reveal">'+
-      '<span class="card-title grey-text text-darken-4">' + titulo + '<i class="material-icons right">close</i></span>'+
-      '<p>' + descripcion + '</p>'+
-    '</div>'+
-  '</div>';
-  return c;
+    let c = '<div class="col s12 card artCard">' +
+        '<div class="card-image waves-effect waves-block waves-light">' +
+        '<img class="activator" src=" ' + img + ' ">' +
+        '</div>' +
+        '<div class="card-content">' +
+        '<span class="card-title activator grey-text text-darken-4">' + t + '<i class="material-icons right">more_vert</i></span>' +
+        '<p><a href="#">This is a link</a></p>' +
+        '</div>' +
+        '<div class="card-reveal">' +
+        '<span class="card-title grey-text text-darken-4">' + titulo + '<i class="material-icons right">close</i></span>' +
+        '<p>' + descripcion + '</p>' +
+        '</div>' +
+        '</div>';
+    return c;
 }
 
 function dropReturn(marcas) {

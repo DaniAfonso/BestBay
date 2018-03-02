@@ -55,7 +55,7 @@ class NavR extends Component {
 class SearchR extends Component {
     render() {
         return (
-            <div className="cardFiltro col s12 m4 l2">
+            <div className="cardFiltro col s12 m4 l3 xl2">
                 <fieldset>
 
                     <div className="input-field col s12">
@@ -170,18 +170,20 @@ class PestaR extends Component {
                     <SpinerR />
 
                 </div>
-                <div id="PestExtra" className="col s12 m8 l10 pest">
-                    <SpinerR />
-                    <div className="col s12 m6">
+                <div id="PestExtra" className="col s12 m8 l9 xl10 pest">
+
+                    <div id="divEbay" className="col s12 m6">                        
                         <div className="parentPaginator col s12">
                             <div id="pagination-1"></div>
                         </div>
+                        <SpinerR />
                         <div id="eResults" className="col s12"></div>
                     </div>
-                    <div className="col s12 m6">
+                    <div id="divBestbuy" className="col s12 m6">
                         <div className="parentPaginator col s12">
                             <div id="pagination-2"></div>
                         </div>
+                        <SpinerR />
                         <div id="bResults" className="col s12"></div>
                     </div>
                 </div>
