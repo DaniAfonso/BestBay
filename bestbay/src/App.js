@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { RenderizarR } from './components/layout/'
 
-import './css/materialize.min.css';
+ import './css/materialize.min.css';
 import './css/simplePagination.css';
-import './css/style.css';
+
+
+
 
 var firebase = require("firebase");
 

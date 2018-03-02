@@ -118,7 +118,7 @@ class MacbookR extends Component {
                 <h5 className="header">MacBook Pro 15 i7 7700HQ</h5>
                 <div className="card horizontal">
                     <div className="cardImg card-image">
-                        <img src="recursos/macbookpro.jpg" />
+                        <img src="recursos/macbookpro.jpg" alt="imagen carta" />
                     </div>
                     <div className="card-stacked">
                         <div className="card-content">
