@@ -1,12 +1,4 @@
 import React, { Component } from 'react';
-import {
-    BrowserRouter as Router,
-    Link,
-    Route,
-    Switch,
-} from 'react-router-dom';
-//import GoogleLogin from '../social/GoogleLogin';
-//import FacebookLogin from '../social/FacebookLogin';
 
 class NavR extends Component {
     render() {
@@ -18,16 +10,16 @@ class NavR extends Component {
                     </a>
                     <ul id="nav-mobile" className="right hide-on-med-and-down">
                         <li>
-                            <a id="loginGithub"><img src="recursos/logos/github.png"/>Login GitHub</a>
+                            <a id="loginGithub"><img src="recursos/logos/github.png" />Login GitHub</a>
                         </li>
                         <li>
-                            <a id="loginFace"><img src="recursos/logos/facebook.png"/>Login Facebook</a>
+                            <a id="loginFace"><img src="recursos/logos/facebook.png" />Login Facebook</a>
                         </li>
                         <li>
-                            <a id="loginTwitter"><img src="recursos/logos/twitter.png"/>Login Twitter</a>
+                            <a id="loginTwitter"><img src="recursos/logos/twitter.png" />Login Twitter</a>
                         </li>
                         <li>
-                            <a id="loginGoogle"><img src="recursos/logos/google.png"/>Login Google</a>
+                            <a id="loginGoogle"><img src="recursos/logos/google.png" />Login Google</a>
                         </li>
                     </ul>
                     <ul className="side-nav" id="mobile-demo">
@@ -126,7 +118,7 @@ class MacbookR extends Component {
                 <h5 className="header">MacBook Pro 15 i7 7700HQ</h5>
                 <div className="card horizontal">
                     <div className="cardImg card-image">
-                        <img src="recursos/macbookpro.jpg" />
+                        <img src="recursos/macbookpro.jpg" alt="imagen carta" />
                     </div>
                     <div className="card-stacked">
                         <div className="card-content">
