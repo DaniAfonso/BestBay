@@ -23,7 +23,7 @@ function searchArtsEbay(b) {
             console.log("ApiEbay completado");
             //console.log(artsEbay);
             rellenarEbay();
-            $cargarPaginacion();
+            paginar("#eResults .card", "#pagination-1", 10);
         },
         error: function (error, codigo, algo) {
             console.error(error);

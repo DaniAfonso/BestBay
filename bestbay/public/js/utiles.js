@@ -66,7 +66,7 @@ function toast(m) {
 }
 
 
-let $cargarPaginacion = function () {
+function paginar(ele, loc, pag) {
     function paginate(options) {
         var items = $(options.itemSelector);
         var numItems = items.length;
@@ -86,13 +86,8 @@ let $cargarPaginacion = function () {
     }
 
     paginate({
-        itemSelector: "#eResults .card",
-        paginationSelector: "#pagination-1",
-        itemsPerPage: 10
-    });
-    paginate({
-        itemSelector: "#bResults .card",
-        paginationSelector: "#pagination-2",
-        itemsPerPage: 10
+        itemSelector: ele,
+        paginationSelector: loc,
+        itemsPerPage: pag
     });
 };

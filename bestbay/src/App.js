@@ -1,8 +1,13 @@
-import React, { Component } from 'react';
-import { RenderizarR } from './components/layout/'
+import React, {
+  Component
+} from 'react';
+import {
+  RenderizarR
+} from './components/layout/'
 
- import './css/materialize.min.css';
+import './css/materialize.min.css';
 import './css/simplePagination.css';
+import './css/style.css';
 
 
 
@@ -10,10 +15,10 @@ import './css/simplePagination.css';
 var firebase = require("firebase");
 
 var config = {
-    apiKey: "AIzaSyAQdLyUmyTiMDID_7TOWl5YCdjY3dDZgo4",
-    authDomain: "bestbay-1519928307522.firebaseapp.com",
-    databaseURL: "https://bestbay-1519928307522.firebaseio.com",
-    storageBucket: "bestbay-1519928307522.appspot.com"
+  apiKey: "AIzaSyAQdLyUmyTiMDID_7TOWl5YCdjY3dDZgo4",
+  authDomain: "bestbay-1519928307522.firebaseapp.com",
+  databaseURL: "https://bestbay-1519928307522.firebaseio.com",
+  storageBucket: "bestbay-1519928307522.appspot.com"
 };
 firebase.initializeApp(config);
 //Framework de Express
@@ -99,11 +104,11 @@ app.listen(app.get('port'), function(){
 });*/
 
 class App extends Component {
-    render() {
-        return (
-          <RenderizarR/>        
-        );
-    }
+  render() {
+    return ( <
+      RenderizarR / >
+    );
+  }
 }
 
 export default App;

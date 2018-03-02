@@ -25,7 +25,7 @@ function searchArtsBestbuy(b) {
             createObjsB(data);
             //console.log(artsBestbuy);
             rellenarBestbuy();
-            
+            paginar("#bResults .card", "#pagination-2", 10);
         })
         .fail(function (jqXHR, textStatus, errorThrown) {
             if (console && console.log) {
