@@ -44,7 +44,7 @@ function createUrlE(b) {
     url += "&REST-PAYLOAD";
     url += "&paginationInput.entriesPerPage=" + objectFilter.size;
     url += "&keywords=" + b;
-    url += "&categoryId=" + objectFilter.getCatEbay();
+    url += "&categoryId=" + objectFilter.catEbaySet;
     url += "&descriptionSearch=true";
     //url += "&sortOrder=asc";
 

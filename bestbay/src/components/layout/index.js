@@ -94,8 +94,8 @@ class SearchR extends Component {
 
                     <div id="selOrder" className="input-field col s12">
                         <select className="selSort">
-                            <option value="asc" defaultValue >Precio ascendente</option>
-                            <option value="desc">Precio descendente</option>
+                            <option value="0" defaultValue >Precio ascendente</option>
+                            <option value="1">Precio descendente</option>
                         </select>
                         <label>Orden</label>
                     </div>
@@ -172,7 +172,7 @@ class PestaR extends Component {
                 </div>
                 <div id="PestExtra" className="col s12 m8 l9 xl10 pest">
 
-                    <div id="divEbay" className="col s12 m6">                        
+                    <div id="divEbay" className="col s12 m6">
                         <div className="parentPaginator col s12">
                             <div id="pagination-1"></div>
                         </div>

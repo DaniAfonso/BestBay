@@ -71,7 +71,7 @@ function sortOrder() {
 
 function setMaxPrice() {
     let maxPrice = $('#maxPrice').val();
-    maxPrice > 0 ? objectFilter.setMaxPrice(maxPrice) : objectFilter.setMaxPrice(9999);
+    maxPrice > 0 ? objectFilter.setMaxPrice(maxPrice) : objectFilter.setMaxPrice(objectFilter.maxPriceD);
 }
 
 function rellenarEbay() {

@@ -23,57 +23,40 @@ function artBestbuy() {
 
 function optFiltrado() {
     /* Smartphones, TV y Health, Fitness and Beauty */
-    this.ebay = ['15032', '293', '26395'];
-    this.bestbuy = ['pcmcat209400050001', 'abcat0101000', 'pcmcat242800050021'];
-    this.catSelEbay = this.ebay[0];
-    this.catSelBestbuy = this.bestbuy[0];
-    this.maxPrice = 1000;
-    this.order = 'asc';
-    this.brands = "";
+    this.maxPriceD = 9999;
+    this.catEbay = ['15032', '293', '26395'];
+    this.catBestbuy = ['pcmcat209400050001', 'abcat0101000', 'pcmcat242800050021'];
+    this.ordEbay = ['PricePlusShippingHighest', 'PricePlusShippingLowest'];
+    this.ordBestbuy = ['asc', 'desc'];
+
+    this.catEbaySet = this.catEbay[0];
+    this.catBestbuySet = this.catBestbuy[0];
+    this.ordEbaySet = this.ordEbay[0];
+    this.ordBestbuySet = this.ordBestbuy[0];
+
+    this.maxPrice = this.maxPriceD;   
+    this.brand = "";
     this.size = 100;
 }
 
 optFiltrado.prototype.selCats = function (e) {
-    this.catSelEbay = this.ebay[e];
-    this.catSelBestbuy = this.bestbuy[e];
+    this.catSelEbay = this.catEbay[e];
+    this.catSelBestbuy = this.catBestbuy[e];
 }
 
-optFiltrado.prototype.getCatEbay = function () {
-    return this.catSelEbay;
-}
-
-optFiltrado.prototype.getCatBestbuy = function () {
-    return this.catSelBestbuy;
+optFiltrado.prototype.setOrder = function (e) {
+    this.ordEbaySet = this.ordEbay[e];
+    this.ordBestbuySet = this.ordBestbuy[e];
 }
 
 optFiltrado.prototype.setMaxPrice = function (e) {
     this.maxPrice = e;
 }
 
-optFiltrado.prototype.getMaxPrice = function () {
-    return this.maxPrice;
-}
-
-optFiltrado.prototype.setOrder = function (e) {
-    this.order = e;
-}
-
-optFiltrado.prototype.getOrder = function (e) {
-    return this.order;
-}
-
-optFiltrado.prototype.setBrands = function (e) {
-    this.brands = " " + e;
-}
-
-optFiltrado.prototype.getBrands = function () {
-    return this.brands;
-}
-
 optFiltrado.prototype.setSize = function (e) {
     this.size = e;
 }
 
-optFiltrado.prototype.getSize = function () {
-    return this.size;
+optFiltrado.prototype.setBrands = function (e) {
+    this.brand = " " + e;
 }

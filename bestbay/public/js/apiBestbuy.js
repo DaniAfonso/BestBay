@@ -37,12 +37,12 @@ function searchArtsBestbuy(b) {
 function createUrlB(b) {
     let url;
     url = "https://api.bestbuy.com/v1/products";
-    url += "((search=" + b + objectFilter.getBrands() + ")&";
-    url += "(salePrice<" + objectFilter.getMaxPrice() + ")&";
-    url += "(categoryPath.id=" + objectFilter.getCatBestbuy() + "))";
+    url += "((search=" + b + objectFilter.brand + ")&";
+    url += "(salePrice<" + objectFilter.maxPrice + ")&";
+    url += "(categoryPath.id=" + objectFilter.catBestbuySet + "))";
     url += "?apiKey=A0iJvovzx1h8jN9IXhGSCwjm";
-    url += "&sort=salePrice." + objectFilter.getOrder();
-    url += "&pageSize=" + objectFilter.getSize();
+    url += "&sort=salePrice." + objectFilter.ordBestbuySet;
+    url += "&pageSize=" + objectFilter.size;
     url += "&show=salePrice,thumbnailImage,name,image,description&format=json"
     return url;
 }
