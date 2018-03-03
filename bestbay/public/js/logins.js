@@ -20,19 +20,19 @@ let provider = null;
 function initLogin() {
     firebase.initializeApp(config);
 
-    $('#loginFace').click(function () {
+    $('.loginFace').click(function () {
         provider = new firebase.auth.FacebookAuthProvider();
         openLoginProcess();
     });
-    $('#loginGoogle').click(function () {
+    $('.loginGoogle').click(function () {
         provider = new firebase.auth.GoogleAuthProvider();
         openLoginProcess();
     });
-    $('#loginTwitter').click(function () {
+    $('.loginTwitter').click(function () {
         provider = new firebase.auth.TwitterAuthProvider();
         openLoginProcess();
     });
-    $('#loginGithub').click(function () {
+    $('.loginGithub').click(function () {
         provider = new firebase.auth.GithubAuthProvider();
         openLoginProcess();
     });

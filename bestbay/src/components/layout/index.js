@@ -4,53 +4,57 @@ class NavR extends Component {
     render() {
         return (
             <nav className="nav-extended">
-                <div className="nav-wrapper">
-                    <a href="./index.html" className="brand-logo">
-                        <img height="65px" src="recursos/logos/iconoApp.png" alt="Logo" />
-                    </a>
-                    <ul id="nav-mobile" className="right hide-on-med-and-down">
-                        <li>
-                            <h5 className="logTitulo">LOGIN:</h5>
-                        </li>
-                        <li>
-                            <a id="loginGithub"><img src="recursos/logos/github.png" /></a>
-                        </li>
-                        <li>
-                            <a id="loginFace"><img src="recursos/logos/facebook.png" /></a>
-                        </li>
-                        <li>
-                            <a id="loginTwitter"><img src="recursos/logos/twitter.png" /></a>
-                        </li>
-                        <li>
-                            <a id="loginGoogle"><img src="recursos/logos/google.png" /></a>
-                        </li>
-                    </ul>
-                    <ul className="side-nav" id="mobile-demo">
-                        <li>
-                            <a href="sass.html">Sass</a>
-                        </li>
-                        <li>
-                            <a href="badges.html">Components</a>
-                        </li>
-                        <li>
-                            <a href="collapsible.html">JavaScript</a>
-                        </li>
-                    </ul>
-                </div>
-                <div className="nav-content">
-                    <ul className="tabs tabs-transparent">
-                        <li className="tab">
-                            <a id="btnPestEbay" className="btnPest">Ebay</a>
-                        </li>
-                        <li className="tab">
-                            <a id="btnPestBestbuy" className="btnPest">BestBuy</a>
-                        </li>
-                        <li className="tab">
-                            <a id="btnPestExtra" className="btnPest active" >Extras</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+                 <div className="nav-wrapper">
+                     <a href="./index.html" className="brand-logo">
+                         <img height="65px" src="recursos/logos/iconoApp.png" alt="Logo" />
+                     </a>
+                     <a href="#" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
+                     <ul id="nav-mobile" className="right hide-on-med-and-down">
+                         <li>
+                             <h5 className="logTitulo">LOGIN:</h5>
+                         </li>
+                         <li>
+                             <a className="loginGithub"><img src="recursos/logos/github.png" /></a>
+                         </li>
+                         <li>
+                             <a className="loginFace"><img src="recursos/logos/facebook.png" /></a>
+                         </li>
+                         <li>
+                             <a className="loginTwitter"><img src="recursos/logos/twitter.png" /></a>
+                         </li>
+                         <li>
+                             <a className="loginGoogle"><img src="recursos/logos/google.png" /></a>
+                         </li>
+                     </ul>
+                     <ul className="side-nav" id="mobile-demo">
+                         <li>
+                             <a className="loginGithub">Login Github</a>
+                         </li>
+                         <li>
+                             <a className="loginFace">Login Gacebook</a>
+                         </li>
+                         <li>
+                             <a className="loginTwitter">Login Twiter</a>
+                         </li>
+                         <li>
+                             <a className="loginGoogle">Login Google</a>
+                         </li>
+                     </ul>
+                 </div>
+                 <div className="nav-content">
+                     <ul className="tabs tabs-transparent">
+                         <li className="tab">
+                             <a id="btnPestEbay" className="btnPest">Ebay</a>
+                         </li>
+                         <li className="tab">
+                             <a id="btnPestBestbuy" className="btnPest">BestBuy</a>
+                         </li>
+                         <li className="tab">
+                             <a id="btnPestExtra" className="btnPest active" >Extras</a>
+                         </li>
+                     </ul>
+                 </div>
+             </nav>
         )
     }
 }
