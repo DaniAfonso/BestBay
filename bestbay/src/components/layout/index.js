@@ -43,14 +43,16 @@ class NavR extends Component {
                  </div>
                  <div className="nav-content">
                      <ul className="tabs tabs-transparent">
+                         {/*
                          <li className="tab">
                              <a id="btnPestEbay" className="btnPest">Ebay</a>
                          </li>
                          <li className="tab">
                              <a id="btnPestBestbuy" className="btnPest">BestBuy</a>
                          </li>
+                         */}
                          <li className="tab">
-                             <a id="btnPestExtra" className="btnPest active" >Extras</a>
+                             <a id="btnPestExtra" className="btnPest active" >Busqueda</a>
                          </li>
                      </ul>
                  </div>
@@ -196,6 +198,7 @@ class PestaR extends Component {
     render() {
         return (
             <div>
+                {/*
                 <div id="PestEbay" className="col s12 m8 pest none">
                     <SpinerR />
 
@@ -204,6 +207,7 @@ class PestaR extends Component {
                     <SpinerR />
 
                 </div>
+                */}
                 <div id="PestExtra" className="col s12 m8 l9 xl10 pest">
 
                     <div id="divEbay" className="col s12 m6">
