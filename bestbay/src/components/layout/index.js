@@ -4,53 +4,59 @@ class NavR extends Component {
     render() {
         return (
             <nav className="nav-extended">
-                <div className="nav-wrapper">
-                    <a href="./index.html" className="brand-logo">
-                        <img height="65px" src="recursos/logos/iconoApp.png" alt="Logo" />
-                    </a>
-                    <ul id="nav-mobile" className="right hide-on-med-and-down">
-                        <li>
-                            <h5 className="logTitulo">LOGIN:</h5>
-                        </li>
-                        <li>
-                            <a id="loginGithub"><img alt="GitHub logo" src="recursos/logos/github.png" /></a>
-                        </li>
-                        <li>
-                            <a id="loginFace"><img alt="Facebook logo" src="recursos/logos/facebook.png" /></a>
-                        </li>
-                        <li>
-                            <a id="loginTwitter"><img alt="Twitter logo" src="recursos/logos/twitter.png" /></a>
-                        </li>
-                        <li>
-                            <a id="loginGoogle"><img alt="Google logo" src="recursos/logos/google.png" /></a>
-                        </li>
-                    </ul>
-                    <ul className="side-nav" id="mobile-demo">
-                        <li>
-                            <a href="sass.html">Sass</a>
-                        </li>
-                        <li>
-                            <a href="badges.html">Components</a>
-                        </li>
-                        <li>
-                            <a href="collapsible.html">JavaScript</a>
-                        </li>
-                    </ul>
-                </div>
-                <div className="nav-content">
-                    <ul className="tabs tabs-transparent">
-                        <li className="tab">
-                            <a id="btnPestEbay" className="btnPest">Ebay</a>
-                        </li>
-                        <li className="tab">
-                            <a id="btnPestBestbuy" className="btnPest">BestBuy</a>
-                        </li>
-                        <li className="tab">
-                            <a id="btnPestExtra" className="btnPest active" >Extras</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+                 <div className="nav-wrapper">
+                     <a href="./index.html" className="brand-logo">
+                         <img height="65px" src="recursos/logos/iconoApp.png" alt="Logo" />
+                     </a>
+                     <a href="#" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
+                     <ul id="nav-mobile" className="right hide-on-med-and-down">
+                         <li>
+                             <h5 className="logTitulo">LOGIN:</h5>
+                         </li>
+                         <li>
+                             <a className="loginGithub"><img src="recursos/logos/github.png" /></a>
+                         </li>
+                         <li>
+                             <a className="loginFace"><img src="recursos/logos/facebook.png" /></a>
+                         </li>
+                         <li>
+                             <a className="loginTwitter"><img src="recursos/logos/twitter.png" /></a>
+                         </li>
+                         <li>
+                             <a className="loginGoogle"><img src="recursos/logos/google.png" /></a>
+                         </li>
+                     </ul>
+                     <ul className="side-nav" id="mobile-demo">
+                         <li>
+                             <a className="loginGithub">Login Github</a>
+                         </li>
+                         <li>
+                             <a className="loginFace">Login Facebook</a>
+                         </li>
+                         <li>
+                             <a className="loginTwitter">Login Twiter</a>
+                         </li>
+                         <li>
+                             <a className="loginGoogle">Login Google</a>
+                         </li>
+                     </ul>
+                 </div>
+                 <div className="nav-content">
+                     <ul className="tabs tabs-transparent">
+                         {/*
+                         <li className="tab">
+                             <a id="btnPestEbay" className="btnPest">Ebay</a>
+                         </li>
+                         <li className="tab">
+                             <a id="btnPestBestbuy" className="btnPest">BestBuy</a>
+                         </li>
+                         */}
+                         <li className="tab">
+                             <a id="btnPestExtra" className="btnPest active" >Busqueda</a>
+                         </li>
+                     </ul>
+                 </div>
+             </nav>
         )
     }
 }
@@ -109,7 +115,7 @@ class SearchR extends Component {
                     </div>
 
                     <div className="input-field col s12 m6">
-                        <input min="1" placeholder="Df: 9999" id="maxPrice" type="number" className="validate" />
+                        <input min="1" placeholder="Df: 99999" id="maxPrice" type="number" className="validate" />
                         <label htmlFor="maxPrice">Precio Max</label>
                     </div>
 
@@ -192,6 +198,7 @@ class PestaR extends Component {
     render() {
         return (
             <div>
+                {/*
                 <div id="PestEbay" className="col s12 m8 pest none">
                     <SpinerR />
 
@@ -200,20 +207,23 @@ class PestaR extends Component {
                     <SpinerR />
 
                 </div>
+                */}
                 <div id="PestExtra" className="col s12 m8 l9 xl10 pest">
 
                     <div id="divEbay" className="col s12 m6">
                         <div className="parentPaginator col s12">
                             <div id="pagination-1"></div>
                         </div>
-                        <SpinerR />
+                        <p className="noEncontrado none">Ningún resultado que mostrar</p>
+                        <SpinerR />                        
                         <div id="eResults" className="col s12"></div>
                     </div>
                     <div id="divBestbuy" className="col s12 m6">
                         <div className="parentPaginator col s12">
                             <div id="pagination-2"></div>
                         </div>
-                        <SpinerR />
+                        <p className="noEncontrado none">Ningún resultado que mostrar</p>
+                        <SpinerR />                        
                         <div id="bResults" className="col s12"></div>
                     </div>
                 </div>

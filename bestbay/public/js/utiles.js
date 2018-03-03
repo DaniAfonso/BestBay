@@ -126,7 +126,8 @@ function convToDollar(d) {
 function addEbayPriceConv() {
     $(artsEbay).each(function () {
         let a = $(this)[0];
-        $(this)[0].priceConv = oConv.conv[oConv.convSel] * ($(this)[0].price + $(this)[0].shippingCost);
+        //$(this)[0].priceConv = oConv.conv[oConv.convSel] * ($(this)[0].price + $(this)[0].shippingCost);
+        $(this)[0].priceConv = oConv.conv[oConv.convSel] * $(this)[0].price;
         let b = $(this)[0];
     });
 }

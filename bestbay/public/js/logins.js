@@ -19,20 +19,20 @@ let provider = null;
 */
 function initLogin() {
     firebase.initializeApp(config);
-
-    $('#loginFace').click(function () {
+    $(".button-collapse").sideNav();
+    $('.loginFace').click(function () {
         provider = new firebase.auth.FacebookAuthProvider();
         openLoginProcess();
     });
-    $('#loginGoogle').click(function () {
+    $('.loginGoogle').click(function () {
         provider = new firebase.auth.GoogleAuthProvider();
         openLoginProcess();
     });
-    $('#loginTwitter').click(function () {
+    $('.loginTwitter').click(function () {
         provider = new firebase.auth.TwitterAuthProvider();
         openLoginProcess();
     });
-    $('#loginGithub').click(function () {
+    $('.loginGithub').click(function () {
         provider = new firebase.auth.GithubAuthProvider();
         openLoginProcess();
     });
@@ -47,7 +47,7 @@ function openLoginProcess() {
         let user = result.user;
         console.log(user);
         $('.nav-wrapper').find('ul').first().hide();
-        $('.nav-wrapper').children().first().after('<div id="usuarioRegistrado" style="position: absolute; display: flex; flex-flow: row wrap; width: 500px; margin-left: 60%;justify-content: space-between; align-items: center;"><img src="' + user.photoURL + '" style="width: 32px; height: 32px;"/><p>Bienvenido ' + user.displayName + '</p><a id="logOut" class="waves-effect waves-light btn"><i class="material-icons left">&#xE879;</i>LogOut</a></div>');
+        $('.nav-wrapper').children().first().after('<div id="usuarioRegistrado" style="position: absolute; display: flex; flex-flow: row wrap; width: 450px; margin-left: 65%;justify-content: space-between; align-items: center;"><img src="' + user.photoURL + '" style="width: 32px; height: 32px;"/><p>Bienvenido ' + user.displayName + '</p><a id="logOut" class="waves-effect waves-light btn">Salir</a></div>');
         $('#logOut').click(function () {
             logOut();
         });

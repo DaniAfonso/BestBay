@@ -6,7 +6,7 @@
  * Se asignan con los set designados para ellos y realizan las conversiones necesarias
 */
 function Filtrado() {
-    this.maxPriceD = 9999;
+    this.maxPriceD = 99999;
     this.minPriceD = 1;
     this.totalResultsD = 100;
     this.pageResultsD = 10;

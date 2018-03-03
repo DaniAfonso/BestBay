@@ -26,7 +26,7 @@ $(document).ready(function () {
 function init() {
     oFilter = new Filtrado();
     oConv = new Conversiones();
-
+    
     initLogin();
 
     $('select').material_select();

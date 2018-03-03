@@ -29,10 +29,6 @@
     display: none;
 }
 
-#rowPrincipal .initial {
-    display: initial;
-}
-
 #footer {
     margin-top: 20px;
 }
@@ -72,13 +68,17 @@
     justify-content: center;
 }
 
+#pagination-1,
+#pagination-2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .logTitulo {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: white;
 }
 
-#pagination-1,
-#pagination-2 {
-    margin-top: 20px;
-    margin-bottom: 20px;
+.noEncontrado {
+    text-align: center;
 }
