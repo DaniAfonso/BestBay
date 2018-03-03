@@ -3,6 +3,13 @@
 */
 let keyB = 'A0iJvovzx1h8jN9IXhGSCwjm';
 
+/**
+ * Se puede realizar otra peticion o no.
+ * Se usa para controlar si la peticion anterior,
+ * no ha terminado de ejecutarse.
+ */
+let finB = true;
+
 /** 
  * Array de objetos ArtBestbuy, aquí estan todos
  * los artículos de Bestbuy buscados
@@ -13,8 +20,8 @@ let artsBestbuy = [];
  * Llama al método que asigna la llamada ajax
 */
 function searchBestbuy() {
-    classToggle("#divBestbuy .prelo", "none");
-    classToggle("#divBestbuy .noEncontrado", "none");
+    $('#divBestbuy .prelo').removeClass('none');
+    $('#divBestbuy .noEncontrado').addClass('none');
     searchArtsBestbuy();
 }
 
@@ -23,6 +30,7 @@ function searchBestbuy() {
  * asigna valores o muestra el error
 */
 function searchArtsBestbuy() {
+    finB = false;
     $.ajax({
         //Cambiar a type: POST si necesario
         type: "GET",
@@ -33,24 +41,27 @@ function searchArtsBestbuy() {
     })
         //Si la llamada fue correcta
         .done(function (data, textStatus, jqXHR) {
+            finB = true;
             if (console && console.log) {
                 console.log("ApiBestBuy Done");
             }
             toast("Busqueda en BestBuy completada");
-            classToggle("#divBestbuy .prelo", "none");
-            classToggle("#divBestbuy .noEncontrado", "none");
+            $('#divBestbuy .prelo').addClass('none');
             createObjsB(data);
             addBestbuyPriceConv();
             rellenarBestbuy();
             paginar("#bResults .card", "#pagination-2", oFilter.pageResults);
+            
         })
         //Si la llamada falló
         .fail(function (jqXHR, textStatus, errorThrown) {
+            finB = true;
             if (console && console.log) {
                 console.log("La solicitud a fallado: " + textStatus);
             }
-            classToggle("#divBestbuy .prelo", "none");
-            classToggle("#divBestbuy .noEncontrado", "none");
+            toast("Ha ocurrido un error en la llamada");
+            $('#divBestbuy .prelo').addClass('none');
+            $('#divBestbuy .noEncontrado').addClass('none');
         });
 }
 
@@ -61,11 +72,14 @@ function searchArtsBestbuy() {
 function createUrlB() {
     let url;
     url = "https://api.bestbuy.com/v1/products";
-    url += "((search=" + oFilter.keyword + oFilter.brand + ")&";
-    url += "(salePrice<" + convToDollar(oFilter.maxPrice) + ")&";
-    url += "(salePrice>" + convToDollar(oFilter.minPrice) + ")&";
-    url += "(categoryPath.id=" + oFilter.catBestbuySet + "))";
-    url += "?apiKey=A0iJvovzx1h8jN9IXhGSCwjm";
+    url += "((search=" + oFilter.keyword + ")";
+    url += "&(salePrice<=" + convToDollar(oFilter.maxPrice) + ")";
+    url += "&(salePrice>=" + convToDollar(oFilter.minPrice) + ")";
+    if (oFilter.brand != '')
+        url += "&manufacturer=" + oFilter.brand;
+    if (oFilter.catBestbuySet != '')
+        url += "&(categoryPath.id=" + oFilter.catBestbuySet + ")";
+    url += ")?apiKey=" + keyB;
     url += "&sort=salePrice." + oFilter.ordBestbuySet;
     url += "&pageSize=" + oFilter.totalResults;
     url += "&show=color,description,features.feature,image,url,thumbnailImage,";
@@ -99,6 +113,6 @@ function createObjsB(d) {
         artsBestbuy.push(a);
     });
     if (artsBestbuy.length <= 0)
-        classToggle("#divBestbuy .noEncontrado", "none");
+        $('#divBestbuy .noEncontrado').removeClass('none');
 }
 

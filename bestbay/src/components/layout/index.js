@@ -4,46 +4,46 @@ class NavR extends Component {
     render() {
         return (
             <nav className="nav-extended">
-                 <div className="nav-wrapper">
-                     <a href="./index.html" className="brand-logo">
-                         <img height="65px" src="recursos/logos/iconoApp.png" alt="Logo" />
-                     </a>
-                     <a href="#" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
-                     <ul id="nav-mobile" className="right hide-on-med-and-down">
-                         <li>
-                             <h5 className="logTitulo">LOGIN:</h5>
-                         </li>
-                         <li>
-                             <a className="loginGithub"><img src="recursos/logos/github.png" /></a>
-                         </li>
-                         <li>
-                             <a className="loginFace"><img src="recursos/logos/facebook.png" /></a>
-                         </li>
-                         <li>
-                             <a className="loginTwitter"><img src="recursos/logos/twitter.png" /></a>
-                         </li>
-                         <li>
-                             <a className="loginGoogle"><img src="recursos/logos/google.png" /></a>
-                         </li>
-                     </ul>
-                     <ul className="side-nav" id="mobile-demo">
-                         <li>
-                             <a className="loginGithub">Login Github</a>
-                         </li>
-                         <li>
-                             <a className="loginFace">Login Facebook</a>
-                         </li>
-                         <li>
-                             <a className="loginTwitter">Login Twiter</a>
-                         </li>
-                         <li>
-                             <a className="loginGoogle">Login Google</a>
-                         </li>
-                     </ul>
-                 </div>
-                 <div className="nav-content">
-                     <ul className="tabs tabs-transparent">
-                         {/*
+                <div className="nav-wrapper">
+                    <a href="./index.html" className="brand-logo">
+                        <img height="65px" src="recursos/logos/iconoApp.png" alt="Logo" />
+                    </a>
+                    <a href="#" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
+                    <ul id="nav-mobile" className="right hide-on-med-and-down">
+                        <li>
+                            <h5 className="logTitulo">LOGIN:</h5>
+                        </li>
+                        <li>
+                            <a className="loginGithub"><img alt="Github logo" src="recursos/logos/github.png" /></a>
+                        </li>
+                        <li>
+                            <a className="loginFace"><img alt="Github logo" src="recursos/logos/facebook.png" /></a>
+                        </li>
+                        <li>
+                            <a className="loginTwitter"><img alt="Github logo" src="recursos/logos/twitter.png" /></a>
+                        </li>
+                        <li>
+                            <a className="loginGoogle"><img alt="Github logo" src="recursos/logos/google.png" /></a>
+                        </li>
+                    </ul>
+                    <ul className="side-nav logHam" id="mobile-demo">
+                        <li>
+                            <a className="loginGithub"><img alt="Github logo" src="recursos/logos/github.png" />Login Github</a>
+                        </li>
+                        <li>
+                            <a className="loginFace"><img alt="Github logo" src="recursos/logos/facebook.png" />Login Facebook</a>
+                        </li>
+                        <li>
+                            <a className="loginTwitter"><img alt="Github logo" src="recursos/logos/twitter.png" />Login Twiter</a>
+                        </li>
+                        <li>
+                            <a className="loginGoogle"><img alt="Github logo" src="recursos/logos/google.png" />Login Google</a>
+                        </li>
+                    </ul>
+                </div>
+                <div className="nav-content">
+                    <ul className="tabs tabs-transparent">
+                        {/*
                          <li className="tab">
                              <a id="btnPestEbay" className="btnPest">Ebay</a>
                          </li>
@@ -51,12 +51,12 @@ class NavR extends Component {
                              <a id="btnPestBestbuy" className="btnPest">BestBuy</a>
                          </li>
                          */}
-                         <li className="tab">
-                             <a id="btnPestExtra" className="btnPest active" >Busqueda</a>
-                         </li>
-                     </ul>
-                 </div>
-             </nav>
+                        <li className="tab">
+                            <a id="btnPestExtra" className="btnPest active" >Busqueda</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         )
     }
 }
@@ -79,26 +79,19 @@ class SearchR extends Component {
 
                     <div className="col s12">
                         <ul id="dropCat" className="dropdown-content">
-                            <li><a className="dCat" id="cat0">Smartphones</a></li>
-                            <li><a className="dCat" id="cat1">TV y Health</a></li>
-                            <li><a className="dCat" id="cat2">Fitness and Beauty</a></li>
+                            <li><a className="dCat" id="cat0">All</a></li>
+                            <li><a className="dCat" id="cat1">Smartphones</a></li>
+                            <li><a className="dCat" id="cat2">TV y Health</a></li>
+                            <li><a className="dCat" id="cat3">Fitness and Beauty</a></li>
                         </ul>
                         <a id="dropCatA" className="btn dropdown-button" data-activates="dropCat">Categoría
                             <i className="material-icons right">arrow_drop_down</i>
                         </a>
                     </div>
-
-                    <div className="col s12">
-                        <ul id="dropBrand" className="dropdown-content">
-                            <li><a className="dBra" id="bra">Todas</a></li>
-                            <li><a className="dBra" id="braApple">Apple</a></li>
-                            <li><a className="dBra" id="braSamsung">Samsung</a></li>
-                            <li><a className="dBra" id="braNokia">Nokia</a></li>
-                            <li><a className="dBra" id="braLg">LG</a></li>
-                        </ul>
-                        <a id="dropBrandA" className="btn dropdown-button" data-activates="dropBrand">Marca
-                            <i className="material-icons right">arrow_drop_down</i>
-                        </a>
+                    
+                    <div className="input-field col s12">
+                        <input placeholder="Ej: Apple" id="inBrand" type="text" className="validate" />
+                        <label htmlFor="inBrand">Marca</label>
                     </div>
 
                     <div id="selOrder" className="input-field col s12">
@@ -147,7 +140,7 @@ class SearchR extends Component {
     }
 }
 
-class MacbookR extends Component {
+class ArticuloR extends Component {
     render() {
         return (
             <div>
@@ -214,16 +207,16 @@ class PestaR extends Component {
                         <div className="parentPaginator col s12">
                             <div id="pagination-1"></div>
                         </div>
-                        <p className="noEncontrado none">Ningún resultado que mostrar</p>
-                        <SpinerR />                        
+                        <p className="noEncontrado none">{this.props.mensaje}</p>
+                        <SpinerR />
                         <div id="eResults" className="col s12"></div>
                     </div>
                     <div id="divBestbuy" className="col s12 m6">
                         <div className="parentPaginator col s12">
                             <div id="pagination-2"></div>
                         </div>
-                        <p className="noEncontrado none">Ningún resultado que mostrar</p>
-                        <SpinerR />                        
+                        <p className="noEncontrado none">{this.props.mensaje}</p>
+                        <SpinerR />
                         <div id="bResults" className="col s12"></div>
                     </div>
                 </div>
@@ -273,14 +266,15 @@ class FooterR extends Component {
     }
 }
 
+
 export class RenderizarR extends Component {
-    render() {
+    render(e) {
         return (
             <div className="cont">
                 <div id="rowPrincipal" className="row">
                     <NavR />
                     <SearchR />
-                    <PestaR />
+                    <PestaR mensaje="Ningún resultado que mostrar." />
                     <FooterR />
                 </div>
             </div>

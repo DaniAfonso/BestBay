@@ -26,7 +26,7 @@ $(document).ready(function () {
 function init() {
     oFilter = new Filtrado();
     oConv = new Conversiones();
-    
+
     initLogin();
 
     $('select').material_select();
@@ -38,9 +38,6 @@ function init() {
     });
     $('.dCat').click(function () {
         changeCat($(this)[0]);
-    });
-    $('.dBra').click(function () {
-        changeBrand($(this)[0]);
     });
     $('.dConv').click(function () {
         changeConv($(this)[0]);
@@ -67,9 +64,9 @@ function search() {
         sortOrder();
         setRangePrice();
         setNumItemsSearch();
+        setBrand();
         oFilter.setKeyword(b);
-        $('#eResults, #bResults').empty();
-        searchConversion();        
+        launchApiSearch();
     } else {
         toast("Debes escribir almenos dos caracteres");
     }
@@ -100,18 +97,6 @@ function changeCat(e) {
 }
 
 /**
- * Funcion que permite cambiar entre marcas.
- * Comprobando en su atributo id el tipo.
- * @param {*} e Marca que fue pulsada.
- */
-function changeBrand(e) {
-    let tipoBrand = $(e).attr("id");
-    tipoBrand = tipoBrand.substring(3, tipoBrand.length);
-    oFilter.setBrands(tipoBrand);
-    $('#dropBrandA')[0].childNodes[0].textContent = e.text;
-}
-
-/**
  * Funcion que permite cambiar entre divisas.
  * Comprobando en su atributo id el tipo.
  * @param {*} e Divisa que fue pulsada.
@@ -122,6 +107,19 @@ function changeConv(e) {
     let sim = tipoConv.substring(3, tipoConv.length);
     oConv.setCambio(tip, sim);
     $('#dropConvA')[0].childNodes[0].textContent = e.text;
+}
+
+/**
+ * Funcion que permite elegir una marca.
+ * Debe estar la primera letra en mayuscula, así
+ * que la convertimos por código.
+ */
+function setBrand() {
+    let b = $('#inBrand').val();
+    let m = b.substring(0, 1);
+    let t = b.substring(1, b.length);
+    let r = m.toUpperCase() + t;
+    oFilter.setBrand(r);
 }
 
 /** 
@@ -148,10 +146,21 @@ function setRangePrice() {
  * Asigna el número de items a buscar dependiendo
  * de las preferencias del usuario.
 */
-function setNumItemsSearch(){
+function setNumItemsSearch() {
     let totalResults = $('#totalResults').val();
     let pageResults = $('#pageResults').val();
     oFilter.setTotalResults(totalResults);
     oFilter.setPageResults(pageResults);
 }
 
+/**
+ * Comprueba si las peticiones a la api estan finalizadas, 
+ * si es así las lanza de nuevo, si no, muestra un mensaje.
+ */
+function launchApiSearch() {
+    if (finF && finE && finB) {
+        $('#eResults, #bResults').empty();
+        searchConversion();
+    } else
+        toast('Debes esperar a que termine la consulta  anterior.');
+}

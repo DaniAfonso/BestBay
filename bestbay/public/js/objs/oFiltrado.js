@@ -10,12 +10,13 @@ function Filtrado() {
     this.minPriceD = 1;
     this.totalResultsD = 100;
     this.pageResultsD = 10;
-    this.keyword = "";
+    this.keyword = '';
 
     /* Smartphones, TV y Health, Fitness and Beauty */
-    this.catEbay = ['15032', '293', '26395'];
-    this.catBestbuy = ['pcmcat209400050001', 'abcat0101000', 'pcmcat242800050021'];
-    
+    this.catEbay = ['', '15032', '293', '26395'];
+    this.catBestbuy = ['', 'pcmcat209400050001', 'abcat0101000', 'pcmcat242800050021'];
+
+    //this.ordEbay = ['BestMatch', 'PricePlusShippingLowest', 'PricePlusShippingHighest'];
     this.ordEbay = ['PricePlusShippingLowest', 'PricePlusShippingHighest'];
     this.ordBestbuy = ['asc', 'desc'];
 
@@ -26,7 +27,7 @@ function Filtrado() {
 
     this.maxPrice = this.maxPriceD;
     this.minPrice = this.minPriceD;
-    this.brand = "";
+    this.brand = '';
     this.totalResults = this.totalResultsD;
     this.pageResults = this.pageResultsD;
 }
@@ -87,6 +88,6 @@ Filtrado.prototype.setPageResults = function (e) {
 /**
  * Asigna la marca elegida por el usuario
  */
-Filtrado.prototype.setBrands = function (e) {
-    this.brand = " " + e;
+Filtrado.prototype.setBrand = function (e) {
+    this.brand = e != '' ? e : '';    
 }

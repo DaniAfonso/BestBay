@@ -3,6 +3,13 @@
 */
 let keyE = 'fac7daad-553f-4c97-9da4-0799827c64e4';
 
+/**
+ * Se puede realizar otra peticion o no.
+ * Se usa para controlar si la peticion anterior,
+ * no ha terminado de ejecutarse.
+ */
+let finE = true;
+
 /** 
  * Array de objetos ArtEbay, aquí estan todos
  * los artículos de Ebay buscados
@@ -13,8 +20,8 @@ let artsEbay = [];
  * Llama al método que asigna la llamada ajax
 */
 function searchEbay() {
-    classToggle("#divEbay .prelo", "none");
-    classToggle("#divEbay .noEncontrado", "none");
+    $('#divEbay .prelo').removeClass('none');
+    $('#divEbay .noEncontrado').addClass('none');
     searchArtsEbay();
 }
 
@@ -23,28 +30,32 @@ function searchEbay() {
  * asigna valores o muestra el error
 */
 function searchArtsEbay() {
+    finE = false;
     $.ajax({
         jsonp: "callback",
         dataType: "jsonp",
         url: createUrlE(),
         success: function (response) {
+            finE = true;
             console.log("ApiEbay Done");
             createObjsE(response);
         },
         complete: function () {
+            finE = true;
             toast("Busqueda en Ebay completada");
-            classToggle("#divEbay .prelo", "none");
-            classToggle("#divEbay .noEncontrado", "none");
+            $('#divEbay .prelo').addClass('none');
             addEbayPriceConv();
             rellenarEbay();
             paginar("#eResults .card", "#pagination-1", oFilter.pageResults);
         },
         error: function (error, codigo, algo) {
+            finE = true;
             console.error(error);
             console.error(codigo);
             console.error(algo);
-            classToggle("#divEbay .prelo", "none");
-            classToggle("#divEbay .noEncontrado", "none");
+            toast("Ha ocurrido un error en la llamada");
+            $('#divEbay .prelo').addClass('none');
+            $('#divEbay .noEncontrado').removeClass('none');
         }
     });
 }
@@ -65,12 +76,17 @@ function createUrlE() {
     url += "&paginationInput.entriesPerPage=" + oFilter.totalResults;
     url += "&sortOrder=" + oFilter.ordEbay;
     url += "&keywords=" + oFilter.keyword;
-    url += "&categoryId=" + oFilter.catEbaySet;
+    if (oFilter.catEbaySet != '')
+        url += "&categoryId=" + oFilter.catEbaySet;
     url += "&descriptionSearch=true";
     url += "&itemFilter(0).name=MaxPrice";
     url += "&itemFilter(0).value=" + convToDollar(oFilter.maxPrice);
     url += "&itemFilter(1).name=MinPrice";
     url += "&itemFilter(1).value=" + convToDollar(oFilter.minPrice);
+    if (oFilter.brand != '') {
+        url += "&aspectFilter.aspectName=Brand";
+        url += "&aspectFilter.aspectValueName=" + oFilter.brand;
+    }
     return url;
 }
 
@@ -80,14 +96,11 @@ function createUrlE() {
  * @param {*} d Array con los datos de los articulos buscados
  */
 function createObjsE(root) {
-    //let items = root.findItemsByKeywordsResponse[0].searchResult[0].item || [];
-    //let items = root.findItemsByCategoryResponse[0].searchResult[0].item || [];
     let items = root.findItemsAdvancedResponse[0].searchResult[0].item || [];
     artsEbay = [];
     for (let i = 0; i < items.length; ++i) {
         let itemE = items[i];
-        if (null != itemE.title[0] && null != itemE.viewItemURL) {
-            //$('#eResults').append(cardReturn(title, price, pic));
+        if (null != itemE.title[0] && null != itemE.viewItemURL && null != itemE.galleryURL) {
             let a = new ArtEbay();
             a.name = itemE.title[0] != null ? itemE.title[0] : "No contiene nombre válido";
             a.imgT = itemE.galleryURL[0] != "http://thumbs1.ebaystatic.com/pict/04040_0.jpg" ? itemE.galleryURL[0] : "./recursos/notFound.jpg";
@@ -102,5 +115,5 @@ function createObjsE(root) {
         }
     }
     if (artsEbay.length <= 0)
-        classToggle("#divEbay .noEncontrado", "none");
+    $('#divEbay .noEncontrado').removeClass('none');
 }
