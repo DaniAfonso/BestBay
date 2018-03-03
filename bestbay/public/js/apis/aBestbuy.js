@@ -36,19 +36,21 @@ function searchArtsBestbuy() {
             if (console && console.log) {
                 console.log("ApiBestBuy Done");
             }
+
             toast("Busqueda en BestBuy completada");
             classToggle("#divBestbuy .prelo", "none");
             classToggle("#divBestbuy .noEncontrado", "none");
             createObjsB(data);
             addBestbuyPriceConv();
-            rellenarBestbuy();
-            paginar("#bResults .card", "#pagination-2", oFilter.pageResults);
+            rellenarBestbuy();            
+            paginar("#bResults .card", "#pagination-2", oFilter.pageResults);            
         })
         //Si la llamada falló
         .fail(function (jqXHR, textStatus, errorThrown) {
             if (console && console.log) {
                 console.log("La solicitud a fallado: " + textStatus);
             }
+            toast("Ha ocurrido un error en la llamada");
             classToggle("#divBestbuy .prelo", "none");
             classToggle("#divBestbuy .noEncontrado", "none");
         });
@@ -61,11 +63,14 @@ function searchArtsBestbuy() {
 function createUrlB() {
     let url;
     url = "https://api.bestbuy.com/v1/products";
-    url += "((search=" + oFilter.keyword + oFilter.brand + ")&";
-    url += "(salePrice<" + convToDollar(oFilter.maxPrice) + ")&";
-    url += "(salePrice>" + convToDollar(oFilter.minPrice) + ")&";
-    url += "(categoryPath.id=" + oFilter.catBestbuySet + "))";
-    url += "?apiKey=A0iJvovzx1h8jN9IXhGSCwjm";
+    url += "((search=" + oFilter.keyword + ")";
+    url += "&(salePrice<=" + convToDollar(oFilter.maxPrice) + ")";
+    url += "&(salePrice>=" + convToDollar(oFilter.minPrice) + ")";
+    if (oFilter.brand != '')
+        url += "&manufacturer=" + oFilter.brand;
+    if (oFilter.catBestbuySet != '')
+        url += "&(categoryPath.id=" + oFilter.catBestbuySet + ")";
+    url += ")?apiKey=" + keyB;
     url += "&sort=salePrice." + oFilter.ordBestbuySet;
     url += "&pageSize=" + oFilter.totalResults;
     url += "&show=color,description,features.feature,image,url,thumbnailImage,";

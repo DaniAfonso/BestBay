@@ -43,6 +43,7 @@ function searchArtsEbay() {
             console.error(error);
             console.error(codigo);
             console.error(algo);
+            toast("Ha ocurrido un error en la llamada");
             classToggle("#divEbay .prelo", "none");
             classToggle("#divEbay .noEncontrado", "none");
         }
@@ -65,12 +66,17 @@ function createUrlE() {
     url += "&paginationInput.entriesPerPage=" + oFilter.totalResults;
     url += "&sortOrder=" + oFilter.ordEbay;
     url += "&keywords=" + oFilter.keyword;
-    url += "&categoryId=" + oFilter.catEbaySet;
+    if (oFilter.catEbaySet != '')
+        url += "&categoryId=" + oFilter.catEbaySet;
     url += "&descriptionSearch=true";
     url += "&itemFilter(0).name=MaxPrice";
     url += "&itemFilter(0).value=" + convToDollar(oFilter.maxPrice);
     url += "&itemFilter(1).name=MinPrice";
     url += "&itemFilter(1).value=" + convToDollar(oFilter.minPrice);
+    if (oFilter.brand != '') {
+        url += "&aspectFilter.aspectName=Brand";
+        url += "&aspectFilter.aspectValueName=" + oFilter.brand;
+    }
     return url;
 }
 
@@ -80,14 +86,11 @@ function createUrlE() {
  * @param {*} d Array con los datos de los articulos buscados
  */
 function createObjsE(root) {
-    //let items = root.findItemsByKeywordsResponse[0].searchResult[0].item || [];
-    //let items = root.findItemsByCategoryResponse[0].searchResult[0].item || [];
     let items = root.findItemsAdvancedResponse[0].searchResult[0].item || [];
     artsEbay = [];
     for (let i = 0; i < items.length; ++i) {
         let itemE = items[i];
-        if (null != itemE.title[0] && null != itemE.viewItemURL) {
-            //$('#eResults').append(cardReturn(title, price, pic));
+        if (null != itemE.title[0] && null != itemE.viewItemURL && null != itemE.galleryURL) {
             let a = new ArtEbay();
             a.name = itemE.title[0] != null ? itemE.title[0] : "No contiene nombre válido";
             a.imgT = itemE.galleryURL[0] != "http://thumbs1.ebaystatic.com/pict/04040_0.jpg" ? itemE.galleryURL[0] : "./recursos/notFound.jpg";
