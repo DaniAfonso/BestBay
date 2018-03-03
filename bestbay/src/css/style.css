@@ -79,6 +79,14 @@
     color: white;
 }
 
+.logHam>li>a {
+    display: flex;
+    align-items: center;
+}
+.logHam>li>a>img {
+    margin-right: 8px;
+}
+
 .noEncontrado {
     text-align: center;
 }

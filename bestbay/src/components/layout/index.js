@@ -26,18 +26,18 @@ class NavR extends Component {
                              <a className="loginGoogle"><img src="recursos/logos/google.png" /></a>
                          </li>
                      </ul>
-                     <ul className="side-nav" id="mobile-demo">
+                     <ul className="side-nav logHam" id="mobile-demo">
                          <li>
-                             <a className="loginGithub">Login Github</a>
+                             <a className="loginGithub"><img src="recursos/logos/github.png" />Login Github</a>
                          </li>
                          <li>
-                             <a className="loginFace">Login Facebook</a>
+                             <a className="loginFace"><img src="recursos/logos/facebook.png" />Login Facebook</a>
                          </li>
                          <li>
-                             <a className="loginTwitter">Login Twiter</a>
+                             <a className="loginTwitter"><img src="recursos/logos/twitter.png" />Login Twiter</a>
                          </li>
                          <li>
-                             <a className="loginGoogle">Login Google</a>
+                             <a className="loginGoogle"><img src="recursos/logos/google.png" />Login Google</a>
                          </li>
                      </ul>
                  </div>
