@@ -103,7 +103,7 @@ function createObjsE(root) {
         if (null != itemE.condition && null != itemE.title[0] && null != itemE.viewItemURL && null != itemE.galleryURL) {
             let a = new ArtEbay();
             a.name = itemE.title[0] != null ? itemE.title[0] : "No contiene nombre válido";
-            a.imgT = itemE.galleryURL[0] != "http://thumbs1.ebaystatic.com/pict/04040_0.jpg" ? itemE.galleryURL[0] : "./recursos/notFound.jpg";
+            a.imgT = itemE.galleryURL[0] != "http://thumbs1.ebaystatic.com/pict/04040_0.jpg" ? itemE.galleryURL[0] : "https://github.com/DaniAfonso/bestbayreact/blob/master/docs/recursos/notFound.JPG?raw=true";
             a.url = itemE.viewItemURL != null ? itemE.viewItemURL : "#";
             a.shippingCost = itemE.shippingInfo[0].shippingServiceCost != null ? parseInt(itemE.shippingInfo[0].shippingServiceCost[0].__value__) : 0;
             a.price = itemE.sellingStatus[0].convertedCurrentPrice[0].__value__ != null ? parseInt(itemE.sellingStatus[0].convertedCurrentPrice[0].__value__) : 1;

@@ -100,8 +100,8 @@ function createObjsB(d) {
         let p = $(this)[0];
         //$('#bResults').append(cardReturn(p.name, p.salePrice, p.thumbnailImage));
         let a = new ArtBestbuy();
-        a.imgC = p.image != null ? p.image : "./recursos/notFound.jpg";
-        a.imgT = p.thumbnailImage != null ? p.thumbnailImage : "./recursos/notFound.jpg";
+        a.imgC = p.image != null ? p.image : "https://github.com/DaniAfonso/bestbayreact/blob/master/docs/recursos/notFound.JPG?raw=true";
+        a.imgT = p.thumbnailImage != null ? p.thumbnailImage : "https://github.com/DaniAfonso/bestbayreact/blob/master/docs/recursos/notFound.JPG?raw=true";
         a.name = p.name != null ? p.name : "No contiene nombre válido";
         a.price = p.salePrice != null ? p.salePrice : 1;
         a.description = p.description != null ? p.description : "No contiene descripción válida";
@@ -115,4 +115,3 @@ function createObjsB(d) {
     if (artsBestbuy.length <= 0)
         $('#divBestbuy .noEncontrado').removeClass('none');
 }
-

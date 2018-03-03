@@ -115,4 +115,3 @@ function createObjsB(d) {
     if (artsBestbuy.length <= 0)
         $('#divBestbuy .noEncontrado').removeClass('none');
 }
-
