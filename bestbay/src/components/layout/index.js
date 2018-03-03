@@ -13,16 +13,16 @@ class NavR extends Component {
                             <h5 className="logTitulo">LOGIN:</h5>
                         </li>
                         <li>
-                            <a id="loginGithub"><img src="recursos/logos/github.png" /></a>
+                            <a id="loginGithub"><img alt="GitHub logo" src="recursos/logos/github.png" /></a>
                         </li>
                         <li>
-                            <a id="loginFace"><img src="recursos/logos/facebook.png" /></a>
+                            <a id="loginFace"><img alt="Facebook logo" src="recursos/logos/facebook.png" /></a>
                         </li>
                         <li>
-                            <a id="loginTwitter"><img src="recursos/logos/twitter.png" /></a>
+                            <a id="loginTwitter"><img alt="Twitter logo" src="recursos/logos/twitter.png" /></a>
                         </li>
                         <li>
-                            <a id="loginGoogle"><img src="recursos/logos/google.png" /></a>
+                            <a id="loginGoogle"><img alt="Google logo" src="recursos/logos/google.png" /></a>
                         </li>
                     </ul>
                     <ul className="side-nav" id="mobile-demo">
