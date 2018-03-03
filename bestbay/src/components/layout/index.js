@@ -31,7 +31,7 @@ class NavR extends Component {
                              <a className="loginGithub">Login Github</a>
                          </li>
                          <li>
-                             <a className="loginFace">Login Gacebook</a>
+                             <a className="loginFace">Login Facebook</a>
                          </li>
                          <li>
                              <a className="loginTwitter">Login Twiter</a>
