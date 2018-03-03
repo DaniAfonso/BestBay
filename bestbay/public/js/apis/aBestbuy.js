@@ -13,6 +13,8 @@ let artsBestbuy = [];
  * Llama al método que asigna la llamada ajax
 */
 function searchBestbuy() {
+    classToggle("#divBestbuy .prelo", "none");
+    classToggle("#divBestbuy .noEncontrado", "none");
     searchArtsBestbuy();
 }
 
@@ -21,7 +23,6 @@ function searchBestbuy() {
  * asigna valores o muestra el error
 */
 function searchArtsBestbuy() {
-    classToggle("#divBestbuy .prelo", "none");
     $.ajax({
         //Cambiar a type: POST si necesario
         type: "GET",
@@ -37,6 +38,7 @@ function searchArtsBestbuy() {
             }
             toast("Busqueda en BestBuy completada");
             classToggle("#divBestbuy .prelo", "none");
+            classToggle("#divBestbuy .noEncontrado", "none");
             createObjsB(data);
             addBestbuyPriceConv();
             rellenarBestbuy();
@@ -47,6 +49,8 @@ function searchArtsBestbuy() {
             if (console && console.log) {
                 console.log("La solicitud a fallado: " + textStatus);
             }
+            classToggle("#divBestbuy .prelo", "none");
+            classToggle("#divBestbuy .noEncontrado", "none");
         });
 }
 
@@ -94,5 +98,7 @@ function createObjsB(d) {
 
         artsBestbuy.push(a);
     });
+    if (artsBestbuy.length <= 0)
+        classToggle("#divBestbuy .noEncontrado", "none");
 }
 

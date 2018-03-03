@@ -116,9 +116,7 @@ function featuresToString(f) {
  * Entra una cantidad y la devuelve convertida a dolares
 */
 function convToDollar(d) {
-    console.log(d)
     let co = d / oConv.conv[oConv.convSel];
-    console.log(co)
     return co;
 }
 
@@ -128,7 +126,8 @@ function convToDollar(d) {
 function addEbayPriceConv() {
     $(artsEbay).each(function () {
         let a = $(this)[0];
-        $(this)[0].priceConv = oConv.conv[oConv.convSel] * ($(this)[0].price + $(this)[0].shippingCost);
+        //$(this)[0].priceConv = oConv.conv[oConv.convSel] * ($(this)[0].price + $(this)[0].shippingCost);
+        $(this)[0].priceConv = oConv.conv[oConv.convSel] * $(this)[0].price;
         let b = $(this)[0];
     });
 }

@@ -115,7 +115,7 @@ class SearchR extends Component {
                     </div>
 
                     <div className="input-field col s12 m6">
-                        <input min="1" placeholder="Df: 9999" id="maxPrice" type="number" className="validate" />
+                        <input min="1" placeholder="Df: 99999" id="maxPrice" type="number" className="validate" />
                         <label htmlFor="maxPrice">Precio Max</label>
                     </div>
 
@@ -214,14 +214,16 @@ class PestaR extends Component {
                         <div className="parentPaginator col s12">
                             <div id="pagination-1"></div>
                         </div>
-                        <SpinerR />
+                        <p className="noEncontrado none">Ningún resultado que mostrar</p>
+                        <SpinerR />                        
                         <div id="eResults" className="col s12"></div>
                     </div>
                     <div id="divBestbuy" className="col s12 m6">
                         <div className="parentPaginator col s12">
                             <div id="pagination-2"></div>
                         </div>
-                        <SpinerR />
+                        <p className="noEncontrado none">Ningún resultado que mostrar</p>
+                        <SpinerR />                        
                         <div id="bResults" className="col s12"></div>
                     </div>
                 </div>
