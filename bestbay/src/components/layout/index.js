@@ -101,12 +101,12 @@ class SearchR extends Component {
                     </div>
 
                     <div className="input-field col s12 m6">
-                        <input min="1" placeholder="Ej: 10" id="minPrice" type="number" className="validate" />
+                        <input min="1" placeholder="Df: 1" id="minPrice" type="number" className="validate" />
                         <label htmlFor="minPrice">Precio Min</label>
                     </div>
 
                     <div className="input-field col s12 m6">
-                        <input min="1" placeholder="Ej: 75" id="maxPrice" type="number" className="validate" />
+                        <input min="1" placeholder="Df: 9999" id="maxPrice" type="number" className="validate" />
                         <label htmlFor="maxPrice">Precio Max</label>
                     </div>
 
@@ -123,12 +123,12 @@ class SearchR extends Component {
                     </div>
 
                     <div className="input-field col s12 m6">
-                        <input min="1" placeholder="Ej: 100" id="totalResults" type="number" className="validate" />
+                        <input min="1" placeholder="Df: 100" id="totalResults" type="number" className="validate" />
                         <label htmlFor="totalResults">Total Results</label>
                     </div>
 
                     <div className="input-field col s12 m6">
-                        <input min="1" placeholder="Ej: 10" id="pageResults" type="number" className="validate" />
+                        <input min="1" placeholder="Df: 10" id="pageResults" type="number" className="validate" />
                         <label htmlFor="pageResults">Page Results</label>
                     </div>
 

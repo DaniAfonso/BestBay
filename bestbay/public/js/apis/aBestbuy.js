@@ -58,8 +58,8 @@ function createUrlB() {
     let url;
     url = "https://api.bestbuy.com/v1/products";
     url += "((search=" + oFilter.keyword + oFilter.brand + ")&";
-    url += "(salePrice<" + oFilter.maxPrice + ")&";
-    url += "(salePrice>" + oFilter.minPrice + ")&";
+    url += "(salePrice<" + convToDollar(oFilter.maxPrice) + ")&";
+    url += "(salePrice>" + convToDollar(oFilter.minPrice) + ")&";
     url += "(categoryPath.id=" + oFilter.catBestbuySet + "))";
     url += "?apiKey=A0iJvovzx1h8jN9IXhGSCwjm";
     url += "&sort=salePrice." + oFilter.ordBestbuySet;
