@@ -254,7 +254,7 @@ class FooterR extends Component {
                     </div>
                     <div className="">
                         <div className="container">
-                            © 2018 DaJeLu Copyright
+                            Daniel Afonso - Luis Sanfiel - Jesus Pascolo - © 2018 Copyright
                             <a className="grey-text text-lighten-4 right" href="https://creativecommons.org/licenses/by/4.0/">
                                 <img height="25px" src="./recursos/logos/creative.svg" alt="Logo" />
                             </a>

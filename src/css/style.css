@@ -25,6 +25,10 @@
     align-items: center;
 }
 
+#rowPrincipal {
+    margin-bottom: 0;
+}
+
 #rowPrincipal .none {
     display: none;
 }
