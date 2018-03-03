@@ -88,6 +88,6 @@ Filtrado.prototype.setPageResults = function (e) {
 /**
  * Asigna la marca elegida por el usuario
  */
-Filtrado.prototype.setBrands = function (e) {
-    this.brand = " " + e;
+Filtrado.prototype.setBrand = function (e) {
+    this.brand = e != '' ? e : '';    
 }
