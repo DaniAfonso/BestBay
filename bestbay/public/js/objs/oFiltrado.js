@@ -7,7 +7,7 @@
 */
 function Filtrado() {
     this.maxPriceD = 9999;
-    this.minPriceD = 300;
+    this.minPriceD = 1;
     this.totalResultsD = 100;
     this.pageResultsD = 10;
     this.keyword = "";

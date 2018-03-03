@@ -64,9 +64,9 @@ function createUrlE() {
     url += "&categoryId=" + oFilter.catEbaySet;
     url += "&descriptionSearch=true";
     url += "&itemFilter(0).name=MaxPrice";
-    url += "&itemFilter(0).value=" + oFilter.maxPrice;
+    url += "&itemFilter(0).value=" + convToDollar(oFilter.maxPrice);
     url += "&itemFilter(1).name=MinPrice";
-    url += "&itemFilter(1).value=" + oFilter.minPrice;
+    url += "&itemFilter(1).value=" + convToDollar(oFilter.minPrice);
     return url;
 }
 

@@ -113,6 +113,16 @@ function featuresToString(f) {
 }
 
 /** 
+ * Entra una cantidad y la devuelve convertida a dolares
+*/
+function convToDollar(d) {
+    console.log(d)
+    let co = d / oConv.conv[oConv.convSel];
+    console.log(co)
+    return co;
+}
+
+/** 
  * Agrega el precio convertido a los objetos de ebay
 */
 function addEbayPriceConv() {
