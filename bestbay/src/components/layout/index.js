@@ -6,20 +6,23 @@ class NavR extends Component {
             <nav className="nav-extended">
                 <div className="nav-wrapper">
                     <a href="./index.html" className="brand-logo">
-                        <img height="65px" src="recursos/logos/imax-logo.svg" alt="Logo" />
+                        <img height="65px" src="recursos/logos/iconoApp.png" alt="Logo" />
                     </a>
                     <ul id="nav-mobile" className="right hide-on-med-and-down">
                         <li>
-                            <a id="loginGithub"><img src="recursos/logos/github.png" />Login GitHub</a>
+                            <h5 className="logTitulo">LOGIN:</h5>
                         </li>
                         <li>
-                            <a id="loginFace"><img src="recursos/logos/facebook.png" />Login Facebook</a>
+                            <a id="loginGithub"><img alt="GitHub logo" src="recursos/logos/github.png" /></a>
                         </li>
                         <li>
-                            <a id="loginTwitter"><img src="recursos/logos/twitter.png" />Login Twitter</a>
+                            <a id="loginFace"><img alt="Facebook logo" src="recursos/logos/facebook.png" /></a>
                         </li>
                         <li>
-                            <a id="loginGoogle"><img src="recursos/logos/google.png" />Login Google</a>
+                            <a id="loginTwitter"><img alt="Twitter logo" src="recursos/logos/twitter.png" /></a>
+                        </li>
+                        <li>
+                            <a id="loginGoogle"><img alt="Google logo" src="recursos/logos/google.png" /></a>
                         </li>
                     </ul>
                     <ul className="side-nav" id="mobile-demo">
