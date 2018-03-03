@@ -1,1 +1,5 @@
 jsdoc .\public\js\apis\aBestbuy.js .\public\js\apis\aEbay.js .\public\js\apis\aForex.js .\public\js\objs\oArticulos.js .\public\js\objs\oConversiones.js .\public\js\objs\oFiltrado.js .\public\js\controlador.js .\public\js\logins.js .\public\js\utiles.js
+
+
+
+rm -rf node_modules/gh-pages/.cache
