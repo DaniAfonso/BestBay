@@ -1,5 +1,12 @@
+/** 
+ * Key de Forex
+*/
 let keyF = 'KIrXe3dRjnP5g3qyHTgMgTNSr3CW8Pc8';
 
+/** 
+ * Inicia la llamada ajax, y dependiendo del resultado,
+ * asigna valores o muestra el error
+*/
 function searchConversion() {
     $.ajax({
         type: "GET",
@@ -10,9 +17,9 @@ function searchConversion() {
             if (console && console.log) {
                 console.log("ApiForex Done");
             }
-            objectConv.conv.eur = data[0].price;
-            objectConv.conv.gbp = data[1].price;
-            objectConv.conv.jpy = data[2].price;
+            oConv.conv.eur = data[0].price;
+            oConv.conv.gbp = data[1].price;
+            oConv.conv.jpy = data[2].price;
             searchEbay();
             searchBestbuy();
         })
@@ -23,6 +30,9 @@ function searchConversion() {
         });
 }
 
+/** 
+ * Crea la URL necesaria para obtener las conversiones requeridas
+*/
 function createUrlF() {
     let url = "";
     url += "https://forex.1forge.com/1.0.3/quotes?";

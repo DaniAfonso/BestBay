@@ -1,11 +1,25 @@
+/** 
+ * Key de bestuy
+*/
 let keyB = 'A0iJvovzx1h8jN9IXhGSCwjm';
 
+/** 
+ * Array de objetos ArtBestbuy, aquí estan todos
+ * los artículos de Bestbuy buscados
+*/
 let artsBestbuy = [];
 
-function searchBestbuy(b) {
-    searchArtsBestbuy(b);
+/** 
+ * Llama al método que asigna la llamada ajax
+*/
+function searchBestbuy() {
+    searchArtsBestbuy();
 }
 
+/** 
+ * Inicia la llamada ajax, y dependiendo del resultado,
+ * asigna valores o muestra el error
+*/
 function searchArtsBestbuy() {
     classToggle("#divBestbuy .prelo", "none");
     $.ajax({
@@ -16,6 +30,7 @@ function searchArtsBestbuy() {
         // URL a la que se enviará la solicitud Ajax
         url: createUrlB(),
     })
+        //Si la llamada fue correcta
         .done(function (data, textStatus, jqXHR) {
             if (console && console.log) {
                 console.log("ApiBestBuy Done");
@@ -25,8 +40,9 @@ function searchArtsBestbuy() {
             createObjsB(data);
             addBestbuyPriceConv();
             rellenarBestbuy();
-            paginar("#bResults .card", "#pagination-2", objectFilter.pageResults);
+            paginar("#bResults .card", "#pagination-2", oFilter.pageResults);
         })
+        //Si la llamada falló
         .fail(function (jqXHR, textStatus, errorThrown) {
             if (console && console.log) {
                 console.log("La solicitud a fallado: " + textStatus);
@@ -34,30 +50,38 @@ function searchArtsBestbuy() {
         });
 }
 
+/** 
+ * Crea la URL necesaria que se ajusta a los parámetros de 
+ * filtrado del usuario asignado al objeto filtrado
+*/
 function createUrlB() {
     let url;
     url = "https://api.bestbuy.com/v1/products";
-    url += "((search=" + objectFilter.keyword + objectFilter.brand + ")&";
-    url += "(salePrice<" + objectFilter.maxPrice + ")&";
-    url += "(salePrice>" + objectFilter.minPrice + ")&";
-    url += "(categoryPath.id=" + objectFilter.catBestbuySet + "))";
+    url += "((search=" + oFilter.keyword + oFilter.brand + ")&";
+    url += "(salePrice<" + oFilter.maxPrice + ")&";
+    url += "(salePrice>" + oFilter.minPrice + ")&";
+    url += "(categoryPath.id=" + oFilter.catBestbuySet + "))";
     url += "?apiKey=A0iJvovzx1h8jN9IXhGSCwjm";
-    url += "&sort=salePrice." + objectFilter.ordBestbuySet;
-    url += "&pageSize=" + objectFilter.totalResults;
+    url += "&sort=salePrice." + oFilter.ordBestbuySet;
+    url += "&pageSize=" + oFilter.totalResults;
     url += "&show=color,description,features.feature,image,url,thumbnailImage,";
     url += "shortDescription,salePrice,name,manufacturer";
     url += "&format=json";
     return url;
-
 }
 
+/**
+ * Crea los objetos de bestbuy recibidos y les asigna las propiedades necesarias
+ * Comprueba que sus campos no sean nulos y si lo son asigna valores por defecto
+ * @param {*} d Array con los datos de los articulos buscados
+ */
 function createObjsB(d) {
     //console.log(d.products);
     artsBestbuy = [];
     $(d.products).each(function (i, e) {
         let p = $(this)[0];
         //$('#bResults').append(cardReturn(p.name, p.salePrice, p.thumbnailImage));
-        let a = new artBestbuy();
+        let a = new ArtBestbuy();
         a.imgC = p.image != null ? p.image : "./recursos/notFound.jpg";
         a.imgT = p.thumbnailImage != null ? p.thumbnailImage : "./recursos/notFound.jpg";
         a.name = p.name != null ? p.name : "No contiene nombre válido";

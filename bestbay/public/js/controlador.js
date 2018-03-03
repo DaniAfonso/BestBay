@@ -1,15 +1,35 @@
-let objectFilter;
-let objectConv;
+/** 
+ * Objeto filtrado, que se usara para asignar todas las 
+ * preferecias recogidas en cualquier punto de la app
+*/
+let oFilter;
 
+/** 
+ * Objeto conversiones, que se usara para guardar y recuperar
+ * las conversiones necesarias en cada momento
+*/
+let oConv;
+
+/**
+ * Cuando el documento esté listo, se inicia la ejecucion del programa,
+ * inicializando todos los valores necesarios.
+ */
 $(document).ready(function () {
-    $('select').material_select();
-    inicializar();
+    init();
 });
 
-function inicializar() {
-    objectFilter = new optFiltrado();
-    objectConv = new conversiones();
+/** 
+ * Inicializa todo lo necesario en la app.
+ * Los objetos filtrado y conversiones, login,
+ * los select y todos los componentes del buscador. 
+*/
+function init() {
+    oFilter = new Filtrado();
+    oConv = new Conversiones();
 
+    initLogin();
+
+    $('select').material_select();
     $('#fBtnSearch').click(function () {
         search();
     });
@@ -35,21 +55,30 @@ function inicializar() {
     });
 }
 
+/** 
+ * Realiza la busqueda en las apis, desencadena 
+ * las llamadas.
+ * Primero comprueba que la busqueda sea válida y si no, 
+ * muestra un mensaje, luego se realiza la busqueda
+*/
 function search() {
     let b = $('#fBusqueda').val();
     if (b.length >= 2) {
         sortOrder();
         setRangePrice();
         setNumItemsSearch();
-        objectFilter.setKeyword(b);
+        oFilter.setKeyword(b);
         $('#eResults, #bResults').empty();
-        searchConversion();
-        
+        searchConversion();        
     } else {
         toast("Debes escribir almenos dos caracteres");
     }
 }
 
+/**
+ * Funcion que permite cambiar entre pestañas
+ * @param {*} e Pestaña que fue pulsada
+ */
 function changePest(e) {
     $('.btnPest').removeClass('active');
     $('.pest').addClass('none');
@@ -58,60 +87,71 @@ function changePest(e) {
     $(id).removeClass('none');
 }
 
+/**
+ * Funcion que permite cambiar entre categorias.
+ * Comprobando en su atributo id el tipo.
+ * @param {*} e Categoria que fue pulsada.
+ */
 function changeCat(e) {
     let tipoCat = $(e).attr("id");
     tipoCat = tipoCat.substring(3, 4);
-    objectFilter.selCats(parseInt(tipoCat));
+    oFilter.selCats(parseInt(tipoCat));
     $('#dropCatA')[0].childNodes[0].textContent = e.text;
 }
 
+/**
+ * Funcion que permite cambiar entre marcas.
+ * Comprobando en su atributo id el tipo.
+ * @param {*} e Marca que fue pulsada.
+ */
 function changeBrand(e) {
     let tipoBrand = $(e).attr("id");
     tipoBrand = tipoBrand.substring(3, tipoBrand.length);
-    objectFilter.setBrands(tipoBrand);
+    oFilter.setBrands(tipoBrand);
     $('#dropBrandA')[0].childNodes[0].textContent = e.text;
 }
 
+/**
+ * Funcion que permite cambiar entre divisas.
+ * Comprobando en su atributo id el tipo.
+ * @param {*} e Divisa que fue pulsada.
+ */
 function changeConv(e) {
     let tipoConv = $(e).attr("id");
     let tip = tipoConv.substring(0, tipoConv.length - 1);
     let sim = tipoConv.substring(3, tipoConv.length);
-    objectConv.setCambio(tip, sim);
+    oConv.setCambio(tip, sim);
     $('#dropConvA')[0].childNodes[0].textContent = e.text;
 }
 
+/** 
+ * Asigna el orden en el que se ordena dependiendo
+ * de las preferencias del usuario.
+*/
 function sortOrder() {
     let s = $('.selSort option:selected').val();
-    objectFilter.setOrder(s);
+    oFilter.setOrder(s);
 }
 
+/** 
+ * Asigna el precio máximo y mínimo dependiendo
+ * de las preferencias del usuario.
+*/
 function setRangePrice() {
     let maxPrice = $('#maxPrice').val();
     let minPrice = $('#minPrice').val();
-    objectFilter.setMaxPrice(maxPrice);
-    objectFilter.setMinPrice(minPrice);
+    oFilter.setMaxPrice(maxPrice);
+    oFilter.setMinPrice(minPrice);
 }
 
+/** 
+ * Asigna el número de items a buscar dependiendo
+ * de las preferencias del usuario.
+*/
 function setNumItemsSearch(){
     let totalResults = $('#totalResults').val();
     let pageResults = $('#pageResults').val();
-    objectFilter.setTotalResults(totalResults);
-    objectFilter.setPageResults(pageResults);
-}
-
-function rellenarEbay() {
-    $(artsEbay).each(function () {
-        let a = $(this)[0];
-        //console.log(a);
-        $('#eResults').append(cardNReturn(a.name, a.description, a.imgT, a.url, a.priceConv, objectConv.simbol));
-    });
-}
-
-function rellenarBestbuy() {
-    $(artsBestbuy).each(function () {
-        let a = $(this)[0];
-        //console.log(a);
-        $('#bResults').append(cardNReturn(a.name, a.features, a.imgC, a.url, a.priceConv, objectConv.simbol));
-    });
+    oFilter.setTotalResults(totalResults);
+    oFilter.setPageResults(pageResults);
 }
 
