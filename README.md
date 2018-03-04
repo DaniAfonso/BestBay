@@ -97,7 +97,7 @@ En la parte superior dispondremos de botones para loguearnos en nuestra web medi
 ## Construcción
 
 BestBay está basada y montada en varias tecnologías.
-* **[React](https://reactjs.org/ )** (Mediante esta tecnología construimos dinámicamente y por bloques toda la interfaz gráfica de la aplicación. Con la creación de clases como  `Components` de React y los `render` de estos, efectuamos de forma de efectiva nuestro `virtual DOM`).
+* **[React](https://reactjs.org/ )** - Mediante esta tecnología construimos dinámicamente y por bloques toda la interfaz gráfica de la aplicación. Con la creación de clases como  `Components` de React y los `render` de estos, efectuamos de forma de efectiva nuestro `virtual DOM`.
 
 * **[Ajax](https://developer.mozilla.org/es/docs/Web/Guide/AJAX )** - Con Ajax realizamos las llamadas a las APIs. En la aplicación se usan tres: _API de eBay_, _API de BestBuy_ y _API de Forex_.
 * **[Materialize](http://materializecss.com/ )** - Framework basado en Material Design de Google que nos permite darle un aspecto profesional, así como un diseño intuitivo y claro de los componentes a la aplicación.
