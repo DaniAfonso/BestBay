@@ -5,7 +5,7 @@
 ### Indice de contenidos
 * [BestBay](#bestbay)
 * [Funcionamiento](#funcionamiento)
-* [Construcción](#construccion)
+* [Construcción](#construcción)
 * [Desarrolladores](#desarrolladores)
 ## BestBay
 
