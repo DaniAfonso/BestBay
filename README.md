@@ -10,61 +10,61 @@
 ## BestBay
 
 <p align="center">
-  <img src="public/recursos/readme/whatis.png">
+  <img src="public/recursos/readme/whatis.PNG">
 </p>
 
 BestBay es una aplicación Web y Móvil que proporciona información y comparativa de los productos que se venden en dos grandes comercios digitales como son eBay y BestBuy. En esta primera versión _(v1.0)_ de la aplicación se pueden realizar búsquedas de: ***Todas***, ***Smartphones*** , ***TV y salud***, y ***Fitness and beauty***. Posee unos campos a modo de filtros para la búsqueda para así tener de esta un resultado más concreto y conciso. Desde ella también podremos acceder a la venta de los productos mediante un link directo a la página que lo posee. Por último, posee un apartado de fidelización mediantes cuentas de usuario a las que se puede acceder mediante redes sociales.
 ## Funcionamiento
 
 <p align="center">
-  <img src="public/recursos/readme/busqueda.png">
+  <img src="public/recursos/readme/busqueda.PNG">
 </p>
 
 La aplicación posee una interfaz intuitiva y fácil de usar. Por un lado tenemos campos de rellenar, `<input>`:
 
 * **Filtro** _(producto que deseamos buscar)_
 
-<p align="center">
-  <img src="public/recursos/readme/filtro.png">
+<p align="left">
+  <img src="public/recursos/readme/filtro.PNG">
 </p>
 
 * **Marca** _(marca del producto)_
 
-<p align="center">
-  <img src="public/recursos/readme/marca.png">
+<p align="left">
+  <img src="public/recursos/readme/marca.PNG">
 </p>
 
 * **Precio** _(máximo y mínimo)_
 
-<p align="center">
-  <img src="public/recursos/readme/precio.png">
+<p align="left">
+  <img src="public/recursos/readme/precio.PNG">
 </p>
 
 Por otro lado tenemos seleccionadores, `<select>`:
 
 * **Categoría** _(Todas, Smartphones, TV y salud y Fitness and beauty)_
 
-<p align="center">
-  <img src="public/recursos/readme/categoria.png">
+<p align="left">
+  <img src="public/recursos/readme/categoria.PNG">
 </p>
 
 * **Moneda** _(EUR, USD, GBP y JPY)_
 
-<p align="center">
-  <img src="public/recursos/readme/moneda.png">
+<p align="left">
+  <img src="public/recursos/readme/moneda.PNG">
 </p>
 
 * **Orden** _(precio ascendente o descendente)_
 
-<p align="center">
-  <img src="public/recursos/readme/orden.png">
+<p align="left">
+  <img src="public/recursos/readme/orden.PNG">
 </p>
 Por último tendríamos el propio botón de buscar, `<button>`:
 
 * **Buscar** _(realizar la búsqueda)_  
 
-<p align="center">
-  <img src="public/recursos/readme/buscar.png">
+<p align="left">
+  <img src="public/recursos/readme/buscar.PNG">
 </p>
 
 Durante las llamadas a las APIs de ambas páginas, un `<spinner>` nos indicará que está realizando nuestra búsqueda y una vez esta se haya completado, éste desaparecerá para mostrarnos la información que aparecerá en la misma pantalla de búsqueda teniendo : 
@@ -73,7 +73,7 @@ Durante las llamadas a las APIs de ambas páginas, un `<spinner>` nos indicará 
 * Lado derecho de resultados (**[BestBuy](https://www.bestbuy.com/ "BestBuy")**)
 
 <p align="center">
-  <img src="public/recursos/readme/losdos.png">
+  <img src="public/recursos/readme/losdos.PNG">
 </p>
 
 Dentro de cada lista dispondremos una serie de resultados maquetados en `<div>` a modo de cajetines con la información del producto en venta: 
@@ -83,12 +83,10 @@ Dentro de cada lista dispondremos una serie de resultados maquetados en `<div>` 
 4. Información detallada
 
 <p align="center">
-  <img src="public/recursos/readme/carta1.png">
+  <img src="public/recursos/readme/carta1.PNG">
+  <img src="public/recursos/readme/carta2.PNG">
 </p>
 
-<p align="center">
-  <img src="public/recursos/readme/carta2.png">
-</p>
 
 En la parte superior dispondremos de botones para loguearnos en nuestra web mediante redes sociales (_Facebook_, _Twitter_, _GitHub_, _Google_). En la parte inferior estarán los enlaces de interés que nos llevará a los repositorios de los desarrolladores.
 
