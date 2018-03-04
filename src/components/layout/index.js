@@ -10,34 +10,38 @@ class NavR extends Component {
                     </a>
                     <a href="#" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
                     <ul id="nav-mobile" className="right hide-on-med-and-down">
-                        <li>
-                            <h5 className="logTitulo">LOGIN:</h5>
-                        </li>
-                        <li>
-                            <a className="loginGithub"><img alt="Github logo" src="recursos/logos/github.png" /></a>
-                        </li>
-                        <li>
-                            <a className="loginFace"><img alt="Github logo" src="recursos/logos/facebook.png" /></a>
-                        </li>
-                        <li>
-                            <a className="loginTwitter"><img alt="Github logo" src="recursos/logos/twitter.png" /></a>
-                        </li>
-                        <li>
-                            <a className="loginGoogle"><img alt="Github logo" src="recursos/logos/google.png" /></a>
-                        </li>
+                        <div id="logIcons">
+                            <li>
+                                <h5 className="logTitulo">LOGIN:</h5>
+                            </li>
+                            <li>
+                                <a className="loginGithub"><img alt="Github logo" src="recursos/logos/github.png" /></a>
+                            </li>
+                            <li>
+                                <a className="loginFace"><img alt="Facebook logo" src="recursos/logos/facebook.png" /></a>
+                            </li>
+                            <li>
+                                <a className="loginTwitter"><img alt="Twitter logo" src="recursos/logos/twitter.png" /></a>
+                            </li>
+                            <li>
+                                <a className="loginGoogle"><img alt="Google logo" src="recursos/logos/google.png" /></a>
+                            </li>
+                        </div>
+                        <div id="logUser"></div>
                     </ul>
                     <ul className="side-nav logHam" id="mobile-demo">
+                        <div id="logUserM"></div>
                         <li>
                             <a className="loginGithub"><img alt="Github logo" src="recursos/logos/github.png" />Login Github</a>
                         </li>
                         <li>
-                            <a className="loginFace"><img alt="Github logo" src="recursos/logos/facebook.png" />Login Facebook</a>
+                            <a className="loginFace"><img alt="Facebook logo" src="recursos/logos/facebook.png" />Login Facebook</a>
                         </li>
                         <li>
-                            <a className="loginTwitter"><img alt="Github logo" src="recursos/logos/twitter.png" />Login Twiter</a>
+                            <a className="loginTwitter"><img alt="Twitter logo" src="recursos/logos/twitter.png" />Login Twiter</a>
                         </li>
                         <li>
-                            <a className="loginGoogle"><img alt="Github logo" src="recursos/logos/google.png" />Login Google</a>
+                            <a className="loginGoogle"><img alt="Google logo" src="recursos/logos/google.png" />Login Google</a>
                         </li>
                     </ul>
                 </div>
@@ -88,7 +92,7 @@ class SearchR extends Component {
                             <i className="material-icons right">arrow_drop_down</i>
                         </a>
                     </div>
-                    
+
                     <div className="input-field col s12">
                         <input placeholder="Ej: Apple" id="inBrand" type="text" className="validate" />
                         <label htmlFor="inBrand">Marca</label>

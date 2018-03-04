@@ -87,10 +87,31 @@
     display: flex;
     align-items: center;
 }
+
 .logHam>li>a>img {
     margin-right: 8px;
 }
 
 .noEncontrado {
     text-align: center;
+}
+
+.usuarioRegistrado {
+    display: flex;
+    align-items: center;
+    
+}
+
+.usuarioRegistrado img {
+    height: 40px;
+}
+
+.usuarioRegistrado > li {
+    display: flex;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.usuarioRegistrado > li > a {
+    margin-left: 0;
 }
