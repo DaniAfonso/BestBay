@@ -90,15 +90,19 @@ Dentro de cada lista dispondremos una serie de resultados maquetados en `<div>` 
 
 En la parte superior dispondremos de botones para loguearnos en nuestra web mediante redes sociales (_Facebook_, _Twitter_, _GitHub_, _Google_). En la parte inferior estarán los enlaces de interés que nos llevará a los repositorios de los desarrolladores.
 
+<p align="center">
+  <img src="public/recursos/readme/Funciona_Login.PNG">
+</p>
+
 ## Construcción
 
 BestBay está basada y montada en varias tecnologías.
-* (**[React](https://reactjs.org/ )**) (Mediante esta tecnología construimos dinámicamente y por bloques toda la interfaz gráfica de la aplicación. Con la creación de clases como  `Components` de React y los `render` de estos, efectuamos de forma de efectiva nuestro `virtual DOM`).
+* **[React](https://reactjs.org/ )** (Mediante esta tecnología construimos dinámicamente y por bloques toda la interfaz gráfica de la aplicación. Con la creación de clases como  `Components` de React y los `render` de estos, efectuamos de forma de efectiva nuestro `virtual DOM`).
 
-* (**[Ajax](https://developer.mozilla.org/es/docs/Web/Guide/AJAX )**) (Con Ajax realizamos las llamadas a las APIs. En la aplicación se usan tres: _API de eBay_, _API de BestBuy_ y _API de Forex_).
-* (**[Materialize](http://materializecss.com/ )**) (Framework basado en Material Design de Google que nos permite darle un aspecto profesional, así como un diseño intuitivo y claro de los componentes a la aplicación).
-* (**[Jquery](https://jquery.com/ )**) (Es la herramienta que permite operar sobre el `DOM` y aplicarle a los componentes del mismo los distintos `Events` y `Class`).
-* (**[Firebase](https://firebase.google.com/ )**) (Librería de Google que nos permite realizar logins a nuestra aplicación mediante redes sociales de una forma sencilla y compacta. Gracias a esta librería podemos realizar los logins de las 4 R.R.S.S. ya mencionadas).
+* **[Ajax](https://developer.mozilla.org/es/docs/Web/Guide/AJAX )** - Con Ajax realizamos las llamadas a las APIs. En la aplicación se usan tres: _API de eBay_, _API de BestBuy_ y _API de Forex_.
+* **[Materialize](http://materializecss.com/ )** - Framework basado en Material Design de Google que nos permite darle un aspecto profesional, así como un diseño intuitivo y claro de los componentes a la aplicación.
+* **[Jquery](https://jquery.com/ )** - Es la herramienta que permite operar sobre el `DOM` y aplicarle a los componentes del mismo los distintos `Events` y `Class`.
+* **[Firebase](https://firebase.google.com/ )** - Librería de Google que nos permite realizar logins a nuestra aplicación mediante redes sociales de una forma sencilla y compacta. Gracias a esta librería podemos realizar los logins de las 4 R.R.S.S. ya mencionadas.
 
 ## Desarrolladores
 
