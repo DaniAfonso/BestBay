@@ -1,72 +1,80 @@
-![GitHub Logo](/public/recursos/logos/iconoApp.png)
-Format: ![Alt Text](url)
-
-[![NPM Version][npm-image]][npm-url]
+<p align="center">
+  <img src="public/recursos/logos/iconoApp.png">
+</p>
 
 ### Indice de contenidos
-* [¿Qué es BestBay?](#¿Qué es BestBay?)
+* [BestBay](#bestbay)
 * [Funcionamiento](#funcionamiento)
-* [La base de BestBay](#La base de BestBay)
+* [Construcción](#construccion)
 * [Desarrolladores](#desarrolladores)
-## ¿Qué es BestBuy?
+## BestBay
 
-![GitHub Logo](/public/recursos/readme/whatis.png)
-Format: ![Alt Text](url)
+<p align="center">
+  <img src="public/recursos/readme/whatis.png">
+</p>
 
 BestBay es una aplicación Web y Móvil que proporciona información y comparativa de los productos que se venden en dos grandes comercios digitales como son eBay y BestBuy. En esta primera versión _(v1.0)_ de la aplicación se pueden realizar búsquedas de: ***Todas***, ***Smartphones*** , ***TV y salud***, y ***Fitness and beauty***. Posee unos campos a modo de filtros para la búsqueda para así tener de esta un resultado más concreto y conciso. Desde ella también podremos acceder a la venta de los productos mediante un link directo a la página que lo posee. Por último, posee un apartado de fidelización mediantes cuentas de usuario a las que se puede acceder mediante redes sociales.
 ## Funcionamiento
 
-![GitHub Logo](/public/recursos/readme/busqueda.png)
-Format: ![Alt Text](url)
+<p align="center">
+  <img src="public/recursos/readme/busqueda.png">
+</p>
 
 La aplicación posee una interfaz intuitiva y fácil de usar. Por un lado tenemos campos de rellenar, `<input>`:
 
-:**Filtro** _(producto que deseamos buscar)_
+* **Filtro** _(producto que deseamos buscar)_
 
-![GitHub Logo](/public/recursos/readme/filtro.png)
-Format: ![Alt Text](url)
+<p align="center">
+  <img src="public/recursos/readme/filtro.png">
+</p>
 
-:**Marca** _(marca del producto)_
+* **Marca** _(marca del producto)_
 
-![GitHub Logo](/public/recursos/readme/marca.png)
-Format: ![Alt Text](url)
+<p align="center">
+  <img src="public/recursos/readme/marca.png">
+</p>
 
-:**Precio** _(máximo y mínimo)_
+* **Precio** _(máximo y mínimo)_
 
-![GitHub Logo](/public/recursos/readme/precio.png)
-Format: ![Alt Text](url)
+<p align="center">
+  <img src="public/recursos/readme/precio.png">
+</p>
 
 Por otro lado tenemos seleccionadores, `<select>`:
 
-:**Categoría** _(Todas, Smartphones, TV y salud y Fitness and beauty)_
+* **Categoría** _(Todas, Smartphones, TV y salud y Fitness and beauty)_
 
-![GitHub Logo](/public/recursos/readme/categoria.png)
-Format: ![Alt Text](url)
+<p align="center">
+  <img src="public/recursos/readme/categoria.png">
+</p>
 
-:**Moneda** _(EUR, USD, GBP y JPY)_
+* **Moneda** _(EUR, USD, GBP y JPY)_
 
-![GitHub Logo](/public/recursos/readme/moneda.png)
-Format: ![Alt Text](url)
+<p align="center">
+  <img src="public/recursos/readme/moneda.png">
+</p>
 
-:**Orden** _(precio ascendente o descendente)_
+* **Orden** _(precio ascendente o descendente)_
 
-![GitHub Logo](/public/recursos/readme/orden.png)
-Format: ![Alt Text](url)
-
+<p align="center">
+  <img src="public/recursos/readme/orden.png">
+</p>
 Por último tendríamos el propio botón de buscar, `<button>`:
 
-:**Buscar** _(realizar la búsqueda)_  
+* **Buscar** _(realizar la búsqueda)_  
 
-![GitHub Logo](/public/recursos/readme/buscar.png)
-Format: ![Alt Text](url)
+<p align="center">
+  <img src="public/recursos/readme/buscar.png">
+</p>
 
 Durante las llamadas a las APIs de ambas páginas, un `<spinner>` nos indicará que está realizando nuestra búsqueda y una vez esta se haya completado, éste desaparecerá para mostrarnos la información que aparecerá en la misma pantalla de búsqueda teniendo : 
 
-![GitHub Logo](/public/recursos/readme/losdos.png)
-Format: ![Alt Text](url)
+* Lado izquierdo de resultados (**[eBay](https://www.ebay.es/ "eBay")**)
+* Lado derecho de resultados (**[BestBuy](https://www.bestbuy.com/ "BestBuy")**)
 
-:Lado izquierdo de resultados (**[eBay](https://www.ebay.es/ "eBay")**)
-:Lado derecho de resultados (**[BestBuy](https://www.bestbuy.com/ "BestBuy")**)
+<p align="center">
+  <img src="public/recursos/readme/losdos.png">
+</p>
 
 Dentro de cada lista dispondremos una serie de resultados maquetados en `<div>` a modo de cajetines con la información del producto en venta: 
 1. Foto
@@ -74,15 +82,17 @@ Dentro de cada lista dispondremos una serie de resultados maquetados en `<div>` 
 3. Precio
 4. Información detallada
 
-![GitHub Logo](/public/recursos/readme/carta1.png)
-Format: ![Alt Text](url)
+<p align="center">
+  <img src="public/recursos/readme/carta1.png">
+</p>
 
-![GitHub Logo](/public/recursos/readme/carta2.png)
-Format: ![Alt Text](url)
+<p align="center">
+  <img src="public/recursos/readme/carta2.png">
+</p>
 
 En la parte superior dispondremos de botones para loguearnos en nuestra web mediante redes sociales (_Facebook_, _Twitter_, _GitHub_, _Google_). En la parte inferior estarán los enlaces de interés que nos llevará a los repositorios de los desarrolladores.
 
-## La base de BestBay
+## Construcción
 
 BestBay está basada y montada en varias tecnologías.
 * (**[React](https://reactjs.org/ )**) (Mediante esta tecnología construimos dinámicamente y por bloques toda la interfaz gráfica de la aplicación. Con la creación de clases como  `Components` de React y los `render` de estos, efectuamos de forma de efectiva nuestro `virtual DOM`).
