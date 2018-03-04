@@ -46,7 +46,7 @@ function openLoginProcess() {
         let token = result.credential.accessToken;
         let user = result.user;
         $('#logIcons').hide();
-        $('#logUser, #logUserM').after(
+        $('#logUser, #logUserM').append(
             '<div class="usuarioRegistrado">'
             + '<li> <img src=' + user.photoURL + ' /> </li>'
             + ' <li> <p> ' + user.displayName + '</p> </li>'
@@ -69,7 +69,8 @@ function openLoginProcess() {
 */
 function logOut() {
     firebase.auth().signOut().then(function () {
-        $('#logUser, #logUserM').find('.usuarioRegistrado').remove();
+        $('#logUser').find('.usuarioRegistrado').remove();
+        $('#logUserM').find('.usuarioRegistrado').remove();
         $('#logIcons').show();
     }).catch(function (error) {
         console.log(error.message);
