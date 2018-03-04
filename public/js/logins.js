@@ -45,10 +45,14 @@ function openLoginProcess() {
     firebase.auth().signInWithPopup(provider).then(function (result) {
         let token = result.credential.accessToken;
         let user = result.user;
-        console.log(user);
-        $('.nav-wrapper').find('ul').first().hide();
-        $('.nav-wrapper').children().first().after('<div id="usuarioRegistrado" style="position: absolute; display: flex; flex-flow: row wrap; width: 450px; margin-left: 65%;justify-content: space-between; align-items: center;"><img src="' + user.photoURL + '" style="width: 32px; height: 32px;"/><p>Bienvenido ' + user.displayName + '</p><a id="logOut" class="waves-effect waves-light btn">Salir</a></div>');
-        $('#logOut').click(function () {
+        $('#logIcons').hide();
+        $('#logUser, #logUserM').after(
+            '<div class="usuarioRegistrado">'
+            + '<li> <img src=' + user.photoURL + ' /> </li>'
+            + ' <li> <p> ' + user.displayName + '</p> </li>'
+            + ' <li> <a class="logOut waves-effect waves-light btn">Log Out</a> </li>'
+            + '</div>');
+        $('.logOut').click(function () {
             logOut();
         });
     }).catch(function (error) {
@@ -65,8 +69,8 @@ function openLoginProcess() {
 */
 function logOut() {
     firebase.auth().signOut().then(function () {
-        $('.nav-wrapper').find('#usuarioRegistrado').remove();
-        $('.nav-wrapper').find('ul').first().show();
+        $('#logUser, #logUserM').find('.usuarioRegistrado').remove();
+        $('#logIcons').show();
     }).catch(function (error) {
         console.log(error.message);
     });
