@@ -78,8 +78,22 @@
     margin-bottom: 20px;
 }
 
+#logIcons {
+    display: flex;
+    align-items: center;
+}
+
+#logIcons>li > *{
+    display: flex;
+    align-items: center;
+}
+
+#logIcons img {
+    height: 30px;
+}
+
 .logTitulo {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    /*font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;*/
     color: white;
 }
 
@@ -102,15 +116,16 @@
 }
 
 .usuarioRegistrado img {
-    height: 40px;
+    height: 30px;
 }
 
-.usuarioRegistrado > li {
+.usuarioRegistrado>li {
     display: flex;
     justify-content: center;
     margin-left: 10px;
     margin-right: 10px;
 }
-.usuarioRegistrado > li > a {
+
+.usuarioRegistrado>li>a {
     margin-left: 0;
 }

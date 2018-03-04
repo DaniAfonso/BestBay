@@ -12,7 +12,7 @@ class NavR extends Component {
                     <ul id="nav-mobile" className="right hide-on-med-and-down">
                         <div id="logIcons">
                             <li>
-                                <h5 className="logTitulo">LOGIN:</h5>
+                                <p className="logTitulo">LOGIN:</p>
                             </li>
                             <li>
                                 <a className="loginGithub"><img alt="Github logo" src="recursos/logos/github.png" /></a>
